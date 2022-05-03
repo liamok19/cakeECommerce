@@ -1,4 +1,6 @@
 import React from "react";
+import { Canvas } from "@react-three/fiber";
+
 
 import {
   ApolloClient,
@@ -52,11 +54,11 @@ function App() {
               <Route path="/signup" element={<Signup />} />
             </Routes>
           </div>
-          <Canvas style={{ background: "pink" }}>
+          <Canvas style={{ position: "fixed", background: "pink" }}>
             <ambientLight intensity={0.5} />
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
             <pointLight position={[-5, -5, -5]} />
-            <Box position={[15, 2, 1]} />
+            <Box position={[0,0,-10]} />
           </Canvas>
           <Footer />
         </div>
