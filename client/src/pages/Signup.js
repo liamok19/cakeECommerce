@@ -6,6 +6,12 @@ import { ADD_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
+const styles = {
+  background: {
+    backgroundColor: 'pink',
+  }
+}
+
 const Signup = () => {
   const [formState, setFormState] = useState({
     username: '',
@@ -39,7 +45,7 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
+    <main style={styles.background} className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
         <div className="card">
           <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>

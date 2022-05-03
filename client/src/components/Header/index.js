@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 
 import Auth from "../../utils/auth";
 
+const styles = {
+  background: {
+    backgroundColor: 'pink',
+  }
+}
+
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();
@@ -10,13 +16,13 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
+    <header style={styles.background} className="bg-primary text-light mb-4 py-3 flex-row align-center">
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
           <Link className="text-light" to="/">
-            <h1 className="m-0">Tech Thoughts</h1>
+            <h1 className="m-0">Cake-O-Mania</h1>
           </Link>
-          <p className="m-0">Get into the mind of a programmer.</p>
+          <p className="m-0">Ecletic Cakes for every occasion. We do mean every oCakesion</p>
         </div>
         <div>
           {Auth.loggedIn() ? (
