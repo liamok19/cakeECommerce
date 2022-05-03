@@ -5,16 +5,17 @@ const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate("products");
+      
+      return User.find();
     },
-    users: async (parent, { username }) => {
+    user: async (parent, { username }) => {
       return User.findOne({ username }).populate("products");
     },
     products: async (parent, { username }) => {
       return (params = username ? { username } : {});
       return Product.find(params).sort({ createdAt: -1 });
     },
-    products: async (parent, { productId }) => {
+    product: async (parent, { productId }) => {
       return Product.findOne({ _id: productId });
     },
   },
