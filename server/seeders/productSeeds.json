@@ -1,0 +1,12 @@
+[
+    {
+        "productName": "Red velvet Cake",
+        "productPricing": "125",
+        "productStock": "2"
+    }, 
+    {
+        "productName": "Deluxe Chocolate Cake",
+        "productPricing": "100.00 ",
+        "productStock": "3"
+    }
+]
