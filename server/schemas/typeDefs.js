@@ -1,5 +1,8 @@
 const { gql } = require("apollo-server-express");
-
+   
+// testing without the following the type Product section
+// productPricing: Integer
+    // productStock: Integer
 const typeDefs = gql`
   type User {
     _id: ID
@@ -11,8 +14,6 @@ const typeDefs = gql`
   type Product {
     _id: ID
     productname: String
-    productPricing: Number
-    productStock: Number
   }
   type Auth {
     token: ID!

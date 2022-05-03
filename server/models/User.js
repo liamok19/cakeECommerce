@@ -12,7 +12,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
     unique: true,
-    match: [/.+@+\..+/, "Email address must watch"],
+    match: [/.+@.+\..+/, 'Must match an email address!'],
   },
   password: {
     type: String,
