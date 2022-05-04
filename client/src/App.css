@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.container .card {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 25px rgba(0,0,0, 0.2);
+  backdrop-filter: blur(15px);
+}
