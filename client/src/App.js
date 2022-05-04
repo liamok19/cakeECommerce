@@ -54,11 +54,11 @@ function App() {
               <Route path="/signup" element={<Signup />} />
             </Routes>
           </div>
-          <Canvas style={{ position: "fixed", background: "pink" }}>
+          <Canvas style={{ position: "sticky", background: "pink" }}>
             <ambientLight intensity={0.5} />
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
             <pointLight position={[-5, -5, -5]} />
-            <Box position={[0,0,-10]} />
+            <Box position={[0,0,-50]} />
           </Canvas>
           <Footer />
         </div>
