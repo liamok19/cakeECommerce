@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 
 const styles = {
   card1:{
@@ -23,7 +22,6 @@ const styles = {
     paddingBottom: 270
     }, 
 }
-
 
 export default function Home() {
     return (

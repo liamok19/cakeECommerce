@@ -1,7 +1,6 @@
 import React from "react";
 import { Canvas } from "@react-three/fiber";
-
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
   InMemoryCache,
@@ -9,7 +8,6 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // import Home from './pages/Home';
 import Signup from "./pages/Signup";
@@ -57,17 +55,23 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div
-          style={styles.flexWrapper}
-          className="flex-column justify-flex-start min-100-vh"
+          // style={styles.flexWrapper}
+          // className="flex-column justify-flex-start min-100-vh"
         >
           <Header />
           <div className="container">
             <Routes>
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
               <Route 
-              path="/" 
-              element={<Home />}
+                path="/" 
+                element={<Home />} 
+              />
+              <Route 
+                path="/login" 
+                element={<Login />} 
+              />
+              <Route 
+                path="/signup" 
+                element={<Signup />} 
               />
             </Routes>
             <Home />
