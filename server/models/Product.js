@@ -6,14 +6,27 @@ const productSchema = new Schema({
         required: true, 
         unique: true, 
     }, 
-    productPricing: {
+    image: {
+        type: String,
+    },
+    pricing: {
         type: Number,
         required: true, 
+    },
+    quantity: {
+        type: Number, 
+        min: 0, 
+        default: 0, 
     },
     productStock: {
         type: Number,
         required: true, 
     },
+    category: {
+        type: Schema.Types.ObjectId, 
+        ref: 'Category', 
+        required: true
+    }
 });
 
 const Product = model('Product', productSchema);
