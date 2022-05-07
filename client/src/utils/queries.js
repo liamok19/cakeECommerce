@@ -6,6 +6,18 @@ export const QUERY_USER = gql`
       _id
       username
       email
+      password
+      carts {
+        _id
+        purchaseDate
+        products {
+          _id
+          productName
+          pricing
+          quantity
+          image
+        }
+      }
     }
   }
 `;
@@ -16,6 +28,7 @@ export const QUERY_ME = gql`
       _id
       username
       email
+      password
     }
   }
 `;
@@ -52,4 +65,18 @@ export const QUERY_PRODUCTS = gql`
     }
   }
 }
+`;
+
+export const QUERY_ALL_PRODUCTS = gql`
+{
+products{
+  _id
+  productName
+  pricing
+  quantity
+  image
+  category{
+    productName
+  }
+} 
 `;
