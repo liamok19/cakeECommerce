@@ -1,12 +1,15 @@
 [
     {
         "productName": "Red velvet Cake",
-        "productPricing": "125",
-        "productStock": "2"
+        "pricing": "125",
+        "quantity": "2",
+        "category": "The Festive"
+
     }, 
     {
         "productName": "Deluxe Chocolate Cake",
-        "productPricing": "100.00 ",
-        "productStock": "3"
+        "pricing": "100.00 ",
+        "quantity": "3",
+        "category": "The down the aisle"
     }
 ]

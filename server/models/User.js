@@ -26,7 +26,7 @@ const userSchema = new Schema({
   //     ref: "Cart",
   //   },
   // ],
-  carts: [Cart.Schema] 
+  Cart: [Cart.schema] 
 });
 
 userSchema.pre("save", async function (next) {
