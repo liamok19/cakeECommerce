@@ -18,10 +18,10 @@ const productSchema = new Schema({
     min: 0,
     default: 0,
   },
-  productStock: {
-    type: Number,
-    required: true,
-  },
+  // productStock: {
+  //   type: Number,
+  //   required: true,
+  // },
   category: {
     type: Schema.Types.ObjectId,
     ref: "Category",
