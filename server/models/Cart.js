@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const { create } = require("./User");
+// const { create } = require("./User");
 
 const cartSchema = new Schema({
   //default not required quanity of carts because there will only be 1 cart per user.
@@ -11,7 +11,12 @@ const cartSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  products: [{ type: Schema.Types.ObjectId, ref: "Product" }],
+  products: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Product",
+    },
+  ],
 });
 
 const Cart = model("Cart", cartSchema);

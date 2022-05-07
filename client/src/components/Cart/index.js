@@ -3,7 +3,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/client';
 import { QUERY_CHECKOUT } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
-import CartItem from '../CartItem';
+// import CartItem from '../CartItem';
 import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
@@ -78,9 +78,9 @@ const Cart = () => {
       <h2>Shopping Cart</h2>
       {state.cart.length ? (
         <div>
-          {state.cart.map((item) => (
+          {/* {state.cart.map((item) => (
             <CartItem key={item._id} item={item} />
-          ))}
+          ))} */}
 
           <div className="flex-row space-between">
             <strong>Total: ${calculateTotal()}</strong>

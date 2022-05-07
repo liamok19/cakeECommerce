@@ -19,12 +19,13 @@ const userSchema = new Schema({
     required: true,
     minlength: 4,
   },
-  carts: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Cart",
-    },
-  ],
+  // carts: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: "Cart",
+  //   },
+  // ],
+  carts: [Cart.Schema]
 });
 
 userSchema.pre("save", async function (next) {
