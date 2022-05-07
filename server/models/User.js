@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
+const Cart = require('./Cart');
 
 const userSchema = new Schema({
   username: {
@@ -25,7 +26,7 @@ const userSchema = new Schema({
   //     ref: "Cart",
   //   },
   // ],
-  carts: [Cart.Schema]
+  carts: [Cart.Schema] 
 });
 
 userSchema.pre("save", async function (next) {
