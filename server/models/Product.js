@@ -6,9 +6,9 @@ const productSchema = new Schema({
     required: true,
     unique: true,
   },
-  image: {
-    type: String,
-  },
+  // image: {
+  //   type: String,
+  // },
   pricing: {
     type: Number,
     required: true,

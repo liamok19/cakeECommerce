@@ -13,7 +13,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
     unique: true,
-    match: [/.+@.+\..+/, 'Must match an email address!'],
+    // match: [/.+@.+\..+/, 'Must match an email address!'],
   },
   password: {
     type: String,
@@ -26,7 +26,7 @@ const userSchema = new Schema({
   //     ref: "Cart",
   //   },
   // ],
-  Cart: [Cart.schema] 
+  carts: [Cart.schema] 
 });
 
 userSchema.pre("save", async function (next) {

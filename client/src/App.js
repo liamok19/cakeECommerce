@@ -49,7 +49,7 @@ const styles = {
     justifyContent: "space-between",
   },
 };
-console.log(Home, "hometime bitches");
+// console.log(Home, "hometime bitches");
 function App() {
   return (
     <ApolloProvider client={client}>
