@@ -1,17 +1,17 @@
 const { gql } = require("apollo-server-express");
 
-// testing without the following the type Product section
 
 const typeDefs = gql`
   type Category {
     _id: ID
     name: String
   }
+  
   type Product {
     _id: ID
-    productname: String
-    productPricing: Float
-    productStock: Int
+    productName: String
+    pricing: Float
+    quantity: Int
     category: Category
   }
 
@@ -43,7 +43,7 @@ const typeDefs = gql`
     products(category: ID, name: String): [Product]
     product(_id: ID! ): Product
     user: User
-    order(_id: ID!): Order
+    cart(_id: ID!): Cart
     checkout(products: [ID]!): Checkout
   }
 

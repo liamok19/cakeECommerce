@@ -34,9 +34,10 @@ const resolvers = {
       return await Product.findById(_id).populate("category");
     },
 
-    users: async () => {
-      return User.find();
-    },
+    // user: async () => {
+    //   return await User.find();
+    // },
+
     user: async (parent, arsg, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
