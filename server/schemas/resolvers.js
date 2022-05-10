@@ -38,29 +38,36 @@ const resolvers = {
     //   return await User.find();
     // },
 
-    user: async (parent, arsg, context) => {
+    user: async (parent, args, context) => {
       if (context.user) {
-        const user = await User.findById(context.user._id).populate({
+        const user = await User.findOne(context.user._id).populate({
           path: "carts.products",
           populate: "category",
         });
 
         user.carts.sort((a, b) => b.purchaseDate - a.purchaseDate);
+
         return user;
+      } else err.message.startsWith("Database Error: ");
+      {
+        return new Error("Internal server error");
       }
       // return User.findOne({ username }).populate("products");
-      throw new AuthenticationError("You must be logged in");
+      // throw new AuthenticationError("You must be logged in to order");
     },
+
     cart: async (parent, { _id }, context) => {
       if (context.user) {
-        const user = await User.findById(context.user._id).populate({
+        const user = await User.findOne(context.user._id).populate({
           path: "carts.products",
           populate: "category",
         });
+
         return user.carts.id(_id);
       }
-      throw new AuthenticationError("You must be logged in");
+      throw new AuthenticationError("You must be logged in for cart option");
     },
+
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
       const cart = new Cart({ products: args.products });

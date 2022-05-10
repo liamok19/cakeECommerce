@@ -12,7 +12,7 @@ const typeDefs = gql`
     productName: String
     pricing: Float
     quantity: Int
-    category: Category
+    categories: Category
   }
 
   type Cart {
@@ -22,7 +22,7 @@ const typeDefs = gql`
   }
 
   type User {
-    _id: ID
+    _id: ID!
     username: String
     email: String
     password: String
