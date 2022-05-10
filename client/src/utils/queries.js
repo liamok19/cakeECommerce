@@ -15,7 +15,10 @@ export const QUERY_USER = gql`
           productName
           pricing
           quantity
-          image
+          category {
+            _id
+            name
+          }
         }
       }
     }
@@ -58,9 +61,9 @@ export const QUERY_PRODUCTS = gql`
       productName
       pricing
       quantity
-      image
       category{
         _id
+        name
       }
     }
   }
@@ -74,9 +77,8 @@ products{
   productName
   pricing
   quantity
-  image
   category{
-    productName
+    name
   }
 } 
 `;

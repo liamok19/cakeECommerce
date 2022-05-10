@@ -1,5 +1,6 @@
-import React from "react";
+import { React, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
+import { Environment } from "@react-three/drei";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
@@ -10,6 +11,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 
 // import Home from './pages/Home';
+import Model from "./components/Model";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
@@ -55,28 +57,23 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div
-          // style={styles.flexWrapper}
-          // className="flex-column justify-flex-start min-100-vh"
+        // style={styles.flexWrapper}
+        // className="flex-column justify-flex-start min-100-vh"
         >
           <Header />
           <div className="container">
             <Routes>
-              <Route 
-                path="/" 
-                element={<Home />} 
-              />
-              <Route 
-                path="/login" 
-                element={<Login />} 
-              />
-              <Route 
-                path="/signup" 
-                element={<Signup />} 
-              />
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
             </Routes>
             <Home />
           </div>
           <Canvas style={{ position: "relative", background: "pink" }}>
+            <Suspense fallback={null}>
+              <Model />
+              <Environment preset="sunset" background />
+            </Suspense>
             <ambientLight intensity={0.5} />
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
             <pointLight position={[-5, -5, -5]} />

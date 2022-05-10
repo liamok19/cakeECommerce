@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@apollo/client": "3.5.*",
+    "@react-three/drei": "^9.7.1",
     "@react-three/fiber": "^8.0.12",
     "@stripe/stripe-js": "^1.29.0",
     "@testing-library/jest-dom": "^5.11.4",

@@ -12,7 +12,7 @@ const typeDefs = gql`
     productName: String
     pricing: Float
     quantity: Int
-    categories: Category
+    category: Category
   }
 
   type Cart {
