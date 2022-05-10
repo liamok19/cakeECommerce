@@ -3,11 +3,11 @@ const { stripIgnoredCharacters } = require("graphql");
 const { User, Cart, Product, Category } = require("../models");
 const { populate } = require("../models/Cart");
 const { signToken } = require("../utils/auth");
-const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+const stripe = require('stripe')('sk_test_51KxpOYDyTG5YEiw67gvRGWpXD6Fz8YWKoCvAqZMkXAlhcdGgrgyqTYIxWymXBRsINxaryQxlHvXpVDYnz33SQKcs00Iq9Q8XsV');
 
 const resolvers = {
   Query: {
-    categories: async () => {
+    category: async () => {
       return await Category.find();
     },
     products: async (parent, { category, name }) => {

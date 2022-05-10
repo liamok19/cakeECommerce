@@ -1,6 +1,4 @@
-import { React, Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
+import React, { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
@@ -10,7 +8,10 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-// import Home from './pages/Home';
+//React three fiber - canvas and environment scene
+import { Canvas } from "@react-three/fiber";
+import { Environment } from "@react-three/drei";
+
 import Model from "./components/Model";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
@@ -18,6 +19,16 @@ import Home from "./pages/Home";
 import Header from "./components/Header/index";
 import Footer from "./components/Footer/index";
 import { Box } from "./components/Box";
+
+//model loader
+import { Html, useProgress } from "@react-three/drei";
+import { StoreProvider } from "./utils/GlobalState";
+
+// The hook returns much more than just the progress so there is a lot you can do there to give the user more information about the loading status of the application. 
+const Loader = () => {
+  const { progress } = useProgress();
+  return <Html center>{progress} % loaded</Html>;
+};
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -43,18 +54,19 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const styles = {
-  flexWrapper: {
-    display: "flex",
-    minHeight: "100vh",
-    flexDirection: "column",
-    justifyContent: "space-between",
-  },
-};
+// const styles = {
+//   flexWrapper: {
+//     display: "flex",
+//     minHeight: "100vh",
+//     flexDirection: "column",
+//     justifyContent: "space-between",
+//   },
+// };
 // console.log(Home, "hometime bitches");
 function App() {
   return (
     <ApolloProvider client={client}>
+      <StoreProvider>
       <Router>
         <div
         // style={styles.flexWrapper}
@@ -70,7 +82,7 @@ function App() {
             <Home />
           </div>
           <Canvas style={{ position: "relative", background: "pink" }}>
-            <Suspense fallback={null}>
+            <Suspense fallback={<Loader />}>
               <Model />
               <Environment preset="sunset" background />
             </Suspense>
@@ -82,6 +94,7 @@ function App() {
           <Footer />
         </div>
       </Router>
+      </StoreProvider>
     </ApolloProvider>
   );
 }
