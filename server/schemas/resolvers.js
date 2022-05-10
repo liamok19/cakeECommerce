@@ -3,6 +3,7 @@ const { stripIgnoredCharacters } = require("graphql");
 const { User, Cart, Product, Category } = require("../models");
 const { populate } = require("../models/Cart");
 const { signToken } = require("../utils/auth");
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
   Query: {
@@ -55,6 +56,9 @@ const resolvers = {
       // return User.findOne({ username }).populate("products");
       // throw new AuthenticationError("You must be logged in to order");
     },
+    //   user: async (parent, { userId }) => {
+    //   return User.findOne({ _id: userId });
+    // },
 
     cart: async (parent, { _id }, context) => {
       if (context.user) {
