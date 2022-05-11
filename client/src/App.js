@@ -79,7 +79,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
             </Routes>
-            <Home />
+            {/* <Home /> */}
           </div>
           <Canvas style={{ position: "relative", background: "pink" }}>
             <Suspense fallback={<Loader />}>
