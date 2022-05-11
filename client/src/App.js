@@ -10,7 +10,7 @@ import { setContext } from "@apollo/client/link/context";
 
 //React three fiber - canvas and environment scene
 import { Canvas } from "@react-three/fiber";
-// import { Environment } from "@react-three/drei";
+import { Environment } from "@react-three/drei";
 
 import Model from "./components/Model";
 import Signup from "./pages/Signup";
@@ -54,43 +54,40 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-// const styles = {
-//   flexWrapper: {
-//     display: "flex",
-//     minHeight: "100vh",
-//     flexDirection: "column",
-//     justifyContent: "space-between",
-//   },
-// };
+const styles = {
+  categoryPosition: {
+    position: "relative",
+  },
+};
 // console.log(Home, "hometime bitches");
 function App() {
   return (
     <ApolloProvider client={client}>
       <StoreProvider>
         <Router>
-          <div
-          // style={styles.flexWrapper}
-          // className="flex-column justify-flex-start min-100-vh"
-          >
-            <Header />
-            <div className="container">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Signup />} />
-              </Routes>
-              {/* <Home /> */}
-            </div>
-            <Canvas style={{ position: "relative", background: "pink" }}>
+          <div className="flex-column justify-flex-start min-100-vh">
+            <Header style={styles.categoryPosition} />
+            <Canvas 
+            style={{ position: "relative"}}
+            id="modelcontainer"
+            >
               <Suspense fallback={<Loader />}>
                 <Model position={[50, 10, -40]} />
-                {/* <Environment preset="sunset" background /> */}
+                {/* <Environment  preset="sunset" background /> */}
               </Suspense>
               <ambientLight intensity={0.5} />
               <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
               <pointLight position={[-5, -5, -5]} />
               <Box rotation={[0, 10, 0]} position={[0, 0, -40]} />
             </Canvas>
+            <div className="container">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+              </Routes>
+            </div>
+
             <Footer />
           </div>
         </Router>

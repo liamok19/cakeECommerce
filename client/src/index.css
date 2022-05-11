@@ -17,6 +17,7 @@ code {
     monospace;
 }
 
+
 .flexrow_cake {
   display: flex;
   flex-wrap: wrap;
@@ -35,6 +36,12 @@ code {
 .card {
   width: 25%;
   text-align: center;
+}
+
+#modelcontainer{
+  background: rgba(255, 192, 203, 0.566);
+  box-shadow: 0 10px 25px rgb(0 0 0 / 20%);
+  backdrop-filter: blur(15px);
 }
 
 @media screen and (max-width: 768px) {
