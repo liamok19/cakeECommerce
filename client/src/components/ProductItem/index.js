@@ -48,7 +48,6 @@ function ProductItem(item) {
 
   return (
     <div     
-    // style={styles.flexbox}
     className="card px-1 py-1">
       <Link to={`/products/${_id}`}>
         <img 

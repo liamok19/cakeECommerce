@@ -1,5 +1,6 @@
 :root {
-  
+  --cakeoption-one: calc(1rem * 0.5);
+  --cakeoption-two: calc(1rem);
 }
 
 body {
@@ -15,3 +16,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.flexrow_cake {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.px-1 {
+  padding-right: var(--cakeoption-one);
+  padding-left: var(--cakeoption-one);
+}
+
+.py-1 {
+  padding-top: var(--cakeoption-one);
+  padding-bottom: var(--cakeoption-one);
+}
+
+.card {
+  width: 25%;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+}
+
+
