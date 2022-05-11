@@ -48,7 +48,7 @@ export const QUERY_CHECKOUT = gql`
 
 export const QUERY_CATEGORIES = gql`
   query getCategories {
-    category {
+    categories {
       _id
       name
     }
@@ -62,6 +62,7 @@ export const QUERY_PRODUCTS = gql`
       productName
       pricing
       quantity
+      image
       category {
         _id
         name

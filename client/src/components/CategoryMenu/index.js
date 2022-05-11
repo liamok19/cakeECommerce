@@ -21,6 +21,8 @@ function CategoryMenu() {
         type: UPDATE_CATEGORIES,
         categories: categoryData.categories,
       });
+      console.log(categoryData);
+
       categoryData.categories.forEach((category) => {
         idbPromise("categories", "put", category);
       });

@@ -10,7 +10,7 @@ import { setContext } from "@apollo/client/link/context";
 
 //React three fiber - canvas and environment scene
 import { Canvas } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
+// import { Environment } from "@react-three/drei";
 
 import Model from "./components/Model";
 import Signup from "./pages/Signup";
@@ -24,7 +24,7 @@ import { Box } from "./components/Box";
 import { Html, useProgress } from "@react-three/drei";
 import { StoreProvider } from "./utils/GlobalState";
 
-// The hook returns much more than just the progress so there is a lot you can do there to give the user more information about the loading status of the application. 
+// The hook returns much more than just the progress so there is a lot you can do there to give the user more information about the loading status of the application.
 const Loader = () => {
   const { progress } = useProgress();
   return <Html center>{progress} % loaded</Html>;
@@ -32,7 +32,7 @@ const Loader = () => {
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: "http://localhost:3001/graphql",
 });
 
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
@@ -67,33 +67,33 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <StoreProvider>
-      <Router>
-        <div
-        // style={styles.flexWrapper}
-        // className="flex-column justify-flex-start min-100-vh"
-        >
-          <Header />
-          <div className="container">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-            </Routes>
-            {/* <Home /> */}
+        <Router>
+          <div
+          // style={styles.flexWrapper}
+          // className="flex-column justify-flex-start min-100-vh"
+          >
+            <Header />
+            <div className="container">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+              </Routes>
+              {/* <Home /> */}
+            </div>
+            <Canvas style={{ position: "relative", background: "pink" }}>
+              <Suspense fallback={<Loader />}>
+                <Model position={[50, 10, -40]} />
+                {/* <Environment preset="sunset" background /> */}
+              </Suspense>
+              <ambientLight intensity={0.5} />
+              <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+              <pointLight position={[-5, -5, -5]} />
+              <Box rotation={[0, 10, 0]} position={[0, 0, -40]} />
+            </Canvas>
+            <Footer />
           </div>
-          <Canvas style={{ position: "relative", background: "pink" }}>
-            <Suspense fallback={<Loader />}>
-              <Model />
-              <Environment preset="sunset" background />
-            </Suspense>
-            <ambientLight intensity={0.5} />
-            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-            <pointLight position={[-5, -5, -5]} />
-            <Box rotation={[0, 10, 0]} position={[0, 0, -40]} />
-          </Canvas>
-          <Footer />
-        </div>
-      </Router>
+        </Router>
       </StoreProvider>
     </ApolloProvider>
   );

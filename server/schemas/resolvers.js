@@ -7,7 +7,7 @@ const stripe = require('stripe')('sk_test_51KxpOYDyTG5YEiw67gvRGWpXD6Fz8YWKoCvAq
 
 const resolvers = {
   Query: {
-    category: async () => {
+    categories: async () => {
       return await Category.find();
     },
     products: async (parent, { category, name }) => {
@@ -83,6 +83,7 @@ const resolvers = {
       for (let i = 0; i < products.length; i++) {
         const product = await stripe.products.create({
           name: products[i].name,
+          images: [`${url}/images/${products[i].image}`]
         });
 
         const price = await stripe.prices.create({

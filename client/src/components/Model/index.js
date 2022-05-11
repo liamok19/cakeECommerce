@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 // import { useGLTF } from "@react-three/drei";
 import { useFrame } from '@react-three/fiber'; 
+// import { cylinderGeometry } from "three";
 
 
 // export const Model = props => {
@@ -9,13 +10,13 @@ export default function Model(props) {
     const ref = useRef() 
     // Rotate mesh every frame, this is outside of React without overhead 
     useFrame(() => { 
-      ref.current.rotation.x += 0.03 
+      ref.current.rotation.z += 0.03 
     }) 
     return ( 
       <mesh 
         {...props} 
         ref={ref}> 
-        <torusGeometry args={[10, 5, 16, 100 ]} /> 
+        <cylinderGeometry args= {[5, 5, 20, 32]} />
         <meshStandardMaterial color='#FFE5B4' /> 
       </mesh> 
     ) 

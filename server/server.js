@@ -17,12 +17,17 @@ const server = new ApolloServer({
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+//static assets required from image folder
+app.use('/images', express.static(path.join(__dirname, '../client/images')));
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
 }
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
+
+
 
 const startApolloServer = async (typeDefs, resolvers) => {
     await server.start();

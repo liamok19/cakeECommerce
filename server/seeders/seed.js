@@ -24,6 +24,7 @@ db.once("open", async () => {
             productName: "Red velvet Cake",
             pricing: 125,
             quantity: 2,
+            image: 'pink01.jpg',
             category: categories[2]._id
     
         }, 
@@ -31,6 +32,7 @@ db.once("open", async () => {
             productName: "Deluxe Chocolate Cake",
             pricing: 100,
             quantity: 3,
+            image: 'generalCake.jpg',
             category: categories[3]._id
         }
       ]);
