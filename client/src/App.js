@@ -58,6 +58,13 @@ const styles = {
   categoryPosition: {
     position: "relative",
   },
+  modelPosition: {
+    position: "absolute",
+    left: 0,
+    top: 0,
+    zIndex: -1,
+  },
+
 };
 // console.log(Home, "hometime bitches");
 function App() {
@@ -68,7 +75,7 @@ function App() {
           <div className="flex-column justify-flex-start min-100-vh">
             <Header style={styles.categoryPosition} />
             <Canvas 
-            style={{ position: "relative"}}
+            style={styles.modelPosition}
             id="modelcontainer"
             >
               <Suspense fallback={<Loader />}>
