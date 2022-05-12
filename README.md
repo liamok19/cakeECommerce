@@ -8,3 +8,15 @@ Let them Eat Cake: A cake for every occasion. An online experience to purchase d
 | Login page setup | Completed |
 
 |||
+
+
+Resources: 
+react three model setup 
+https://github.com/pmndrs/react-three-fiber
+
+Fog - 
+https://github.com/pmndrs/react-three-fiber/discussions/1244
+https://codesandbox.io/s/kt3uy?file=/src/index.js
+
+camer positioning - 
+https://discoverthreejs.com/tips-and-tricks/

@@ -10,12 +10,15 @@ import { setContext } from "@apollo/client/link/context";
 
 //React three fiber - canvas and environment scene
 import { Canvas } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
+// import { Environment } from "@react-three/drei";
 
-import Model from "./components/Model";
+// Pages import
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
+
+//Components import
+// import Model from "./components/Model";
 import Header from "./components/Header/index";
 import Footer from "./components/Footer/index";
 import { Box } from "./components/Box";
@@ -65,7 +68,6 @@ const styles = {
     zIndex: -1,
     height: "145vh",
   },
- 
 };
 // console.log(Home, "hometime bitches");
 function App() {
@@ -75,24 +77,20 @@ function App() {
         <Router>
           <div className="flex-column justify-flex-start min-100-vh">
             <Header style={styles.categoryPosition} />
-            <Canvas 
-            style={styles.modelPosition}
-            id="modelcontainer"
-            >
-              <Suspense  fallback={<Loader />}>
+            <Canvas style={styles.modelPosition} id="modelcontainer">
+              <Suspense fallback={<Loader />}>
                 <Box position={[100, 5, -200]} />
                 <Box position={[100, 25, -100]} />
                 <Box position={[-70, -5, -100]} />
                 <Box rotation={[0, 10, 0]} position={[0, 0, -40]} />
                 {/* <Environment  preset="sunset" background /> */}
               </Suspense>
-              <color attach="background" args={['#ffffff']} />
-              
+              <color attach="background" args={["#FDF9FF"]} />
+
               <ambientLight intensity={0.5} />
               <pointLight position={[-5, -5, -5]} />
               <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
               <fog attach="fog" color="#ffccff" near={1} far={400} />
-
             </Canvas>
             <div className="container">
               <Routes>
