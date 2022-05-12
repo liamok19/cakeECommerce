@@ -65,7 +65,7 @@ const styles = {
     zIndex: -1,
     height: "145vh",
   },
-
+ 
 };
 // console.log(Home, "hometime bitches");
 function App() {
@@ -79,14 +79,20 @@ function App() {
             style={styles.modelPosition}
             id="modelcontainer"
             >
-              <Suspense fallback={<Loader />}>
-                <Model position={[50, 10, -40]} />
+              <Suspense  fallback={<Loader />}>
+                <Box position={[100, 5, -200]} />
+                <Box position={[100, 25, -100]} />
+                <Box position={[-70, -5, -100]} />
+                <Box rotation={[0, 10, 0]} position={[0, 0, -40]} />
                 {/* <Environment  preset="sunset" background /> */}
               </Suspense>
+              <color attach="background" args={['#ffffff']} />
+              
               <ambientLight intensity={0.5} />
-              <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
               <pointLight position={[-5, -5, -5]} />
-              <Box rotation={[0, 10, 0]} position={[0, 0, -40]} />
+              <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+              <fog attach="fog" color="#ffccff" near={1} far={400} />
+
             </Canvas>
             <div className="container">
               <Routes>

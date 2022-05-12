@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'; 
 import { useFrame } from '@react-three/fiber'; 
- 
+
+
 export const Box = props => { 
   // This reference will give us direct access to the mesh 
   const ref = useRef() 
@@ -12,7 +13,7 @@ export const Box = props => {
     <mesh 
       {...props} 
       ref={ref}> 
-      <torusGeometry args={[10, 5, 16, 100 ]} /> 
+      <torusGeometry  args={[10, 5, 16, 100 ]} /> 
       <meshStandardMaterial color='#FFE5B4' /> 
     </mesh> 
   ) 
