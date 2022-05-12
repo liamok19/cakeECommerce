@@ -4,6 +4,10 @@
   "private": true,
   "dependencies": {
     "@apollo/client": "3.5.*",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/base": "^5.0.0-alpha.80",
+    "@mui/material": "^5.7.0",
     "@react-three/drei": "^9.7.1",
     "@react-three/fiber": "^8.0.12",
     "@stripe/stripe-js": "^1.29.0",

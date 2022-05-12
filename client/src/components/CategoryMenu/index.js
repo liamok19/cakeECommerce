@@ -8,6 +8,10 @@ import {
 import { QUERY_CATEGORIES } from "../../utils/queries";
 import { idbPromise } from "../../utils/helpers";
 
+// import * as React from 'react';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+
 function CategoryMenu() {
   const [state, dispatch] = useStoreContext();
 
@@ -43,20 +47,35 @@ function CategoryMenu() {
     });
   };
 
+  const styles = {
+    alignedText: {
+      textAlign: "center",
+    },
+    buttonSpacing: {
+      marginLeft: 40,
+    },
+  };
   return (
-    <div>
-      <h2>Choose a Category:</h2>
+    <Stack 
+    // spacing={2} 
+    // direction="row"
+    >
+    <div style={styles.alignedText}>
+      <h2 >Choose a Category:</h2>
       {categories.map((item) => (
-        <button
+        <Button
+        variant="text"
+        style={styles.buttonSpacing}
           key={item._id}
           onClick={() => {
             handleClick(item._id);
           }}
         >
           {item.name}
-        </button>
+        </Button>
       ))}
     </div>
+    </Stack>
   );
 }
 
