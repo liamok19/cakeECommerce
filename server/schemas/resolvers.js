@@ -3,7 +3,9 @@ const { stripIgnoredCharacters } = require("graphql");
 const { User, Cart, Product, Category } = require("../models");
 const { populate } = require("../models/Cart");
 const { signToken } = require("../utils/auth");
-const stripe = require('stripe')('sk_test_51KxpOYDyTG5YEiw67gvRGWpXD6Fz8YWKoCvAqZMkXAlhcdGgrgyqTYIxWymXBRsINxaryQxlHvXpVDYnz33SQKcs00Iq9Q8XsV');
+const stripe = require("stripe")(
+  "sk_test_51KxpOYDyTG5YEiw67gvRGWpXD6Fz8YWKoCvAqZMkXAlhcdGgrgyqTYIxWymXBRsINxaryQxlHvXpVDYnz33SQKcs00Iq9Q8XsV"
+);
 
 const resolvers = {
   Query: {
@@ -41,19 +43,18 @@ const resolvers = {
 
     user: async (parent, args, context) => {
       if (context.user) {
-        console.log('before')
+        console.log("before");
         const user = await User.findById(context.user._id).populate({
           path: "carts.products",
           populate: "category",
         });
 
-        console.log('after')
+        console.log("after");
         user.carts.sort((a, b) => b.purchaseDate - a.purchaseDate);
 
         return user;
       } else {
         throw new AuthenticationError("You must be logged in to order");
-        
       }
       // return User.findOne({ username }).populate("products");
     },
@@ -78,35 +79,44 @@ const resolvers = {
       const cart = new Cart({ products: args.products });
       const line_items = [];
 
-      const { products } = await cart.populate("products");
+      console.log(args);
+      try {
+        const { products } = await cart.populate("products");
 
-      for (let i = 0; i < products.length; i++) {
-        const product = await stripe.products.create({
-          name: products[i].name,
-          images: [`${url}/images/${products[i].image}`]
-        });
+        for (let i = 0; i < products.length; i++) {
+          const product = await stripe.products.create({
+            name: products[i].productName,
+            images: [`${url}/images/${products[i].image}`],
+          });
 
-        const price = await stripe.prices.create({
-          product: product.id,
-          unit_amount: products[i].price * 100,
-          currency: "aud",
-        });
+          const price = await stripe.prices.create({
+            product: product.id,
+            unit_amount: products[i].pricing * 100,
+            currency: "aud",
+          });
 
-        line_items.push({
-          price: price.id,
-          quantity: 1,
+          line_items.push({
+            price: price.id,
+            quantity: 1,
+          });
+        }
+        console.log(args);
+        console.log("this is a string");
+
+        const session = await stripe.checkout.sessions.create({
+          payment_method_types: ["card"],
+          line_items,
+          mode: "payment",
+          success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+          cancel_url: `${url}/`,
         });
+        console.log(session);
+        return { session: session.id };
+
+      } catch (err) {
+        console.log(err);
       }
 
-      const session = await stripe.checkout.sessions.create({
-        payment_method_types: ["card"],
-        line_items,
-        mode: "payment",
-        success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${url}/`,
-      });
-
-      return { session: session.id };
     },
   },
 

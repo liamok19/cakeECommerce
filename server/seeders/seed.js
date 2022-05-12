@@ -11,9 +11,9 @@ db.once("open", async () => {
     const categories = await Category.insertMany([
       { name: "The Pink Collection" },
       { name: "The Blue Collection" },
-      { name: "The Festive" },
       { name: "The down the aisle" },
       { name: "The one that goes with Everything" },
+      { name: "The Festive" },
     ]);
 
     await Product.deleteMany({});
@@ -109,21 +109,21 @@ db.once("open", async () => {
         pricing: 30,
         quantity: 10,
         image: "festive01.jpg",
-        category: categories[4]._id,
+        category: categories[2]._id,
       },
       {
         productName: "The peak Jingle Volume 02",
         pricing: 40,
         quantity: 5,
         image: "festive02.jpg",
-        category: categories[4]._id,
+        category: categories[2]._id,
       },
       {
         productName: "The one with a bow",
         pricing: 75,
         quantity: 5,
         image: "festive03.jpg",
-        category: categories[4]._id,
+        category: categories[2]._id,
       },
     ]);
 
