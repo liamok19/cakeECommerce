@@ -63,6 +63,7 @@ const styles = {
     left: 0,
     top: 0,
     zIndex: -1,
+    height: "145vh",
   },
 
 };
