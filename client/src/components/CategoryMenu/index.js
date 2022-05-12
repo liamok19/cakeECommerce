@@ -56,10 +56,7 @@ function CategoryMenu() {
     },
   };
   return (
-    <Stack 
-    // spacing={2} 
-    // direction="row"
-    >
+    <Stack>
     <div style={styles.alignedText}>
       <h2 >Choose a Category:</h2>
       {categories.map((item) => (
