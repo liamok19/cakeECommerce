@@ -41,12 +41,48 @@ db.once("open", async () => {
         category: categories[0]._id,
       },
       {
+        productName: "The blue horizon",
+        pricing: 50,
+        quantity: 5,
+        image: "blue01.jpg",
+        category: categories[1]._id,
+      },
+      {
+        productName: "Blue Collection Volume 01",
+        pricing: 100,
+        quantity: 2,
+        image: "blue02.jpg",
+        category: categories[1]._id,
+      },
+      {
+        productName: "Blue Jewel",
+        pricing: 160,
+        quantity: 1,
+        image: "blue03.jpg",
+        category: categories[1]._id,
+      },
+      {
         productName: "Deluxe Chocolate Cake",
         pricing: 100,
         quantity: 3,
         image: "generalCake.jpg",
         category: categories[4]._id,
       },
+      {
+        productName: "I-Scream",
+        pricing: 75,
+        quantity: 2,
+        image: "generalCake02.jpg",
+        category: categories[4]._id,
+      },
+      {
+        productName: "That afternoon vibe",
+        pricing: 85,
+        quantity: 2,
+        image: "generalCake03.jpg",
+        category: categories[4]._id,
+      },
+
       {
         productName: "White Tower",
         pricing: 400,
@@ -67,6 +103,27 @@ db.once("open", async () => {
         quantity: 1,
         image: "wedding03.jpg",
         category: categories[3]._id,
+      },
+      {
+        productName: "The peak Jingle Volume 01",
+        pricing: 30,
+        quantity: 10,
+        image: "festive01.jpg",
+        category: categories[4]._id,
+      },
+      {
+        productName: "The peak Jingle Volume 02",
+        pricing: 40,
+        quantity: 5,
+        image: "festive02.jpg",
+        category: categories[4]._id,
+      },
+      {
+        productName: "The one with a bow",
+        pricing: 75,
+        quantity: 5,
+        image: "festive03.jpg",
+        category: categories[4]._id,
       },
     ]);
 
