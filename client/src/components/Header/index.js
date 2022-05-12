@@ -10,6 +10,12 @@ const styles = {
   textStyling: {
     textAlign: "center",
     textDecoration: "none",
+    color: "#36454F",
+  },
+  btnStyling: {
+    marginLeft: 40,
+    textDecoration: "none",
+    color: "#36454F",
   },
 };
 
@@ -37,24 +43,30 @@ const Header = () => {
             Ecletic Cakes for every occasion. We do mean every oCakesion
           </p>
         </div>
-        <div style={styles.textStyling} >
+        <div style={styles.textStyling}>
           {Auth.loggedIn() ? (
             <>
-              <Link 
-               className="btn btn-lg btn-info m-2" to="/me">
+              <Link className="btn btn-lg btn-info m-2" to="/me">
                 {Auth.getUser().data.username}'s profile
               </Link>
-              <button 
-              className="btn btn-lg btn-light m-2" onClick={logout}>
+              <button className="btn btn-lg btn-light m-2" onClick={logout}>
                 Logout
               </button>
             </>
           ) : (
             <>
-              <Link className="btn btn-lg btn-info m-2" to="/login">
+              <Link
+                style={styles.btnStyling}
+                className="btn btn-lg btn-info m-2"
+                to="/login"
+              >
                 Login
               </Link>
-              <Link className="btn btn-lg btn-light m-2" to="/signup">
+              <Link
+                style={styles.btnStyling}
+                className="btn btn-lg btn-light m-2"
+                to="/signup"
+              >
                 Signup
               </Link>
             </>
