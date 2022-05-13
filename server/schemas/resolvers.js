@@ -80,24 +80,62 @@ const resolvers = {
       const line_items = [];
 
       console.log(args);
+      // group our products by id while using reducer
+
+      // count as we go
+      // key is id, value is count
       try {
         const { products } = await cart.populate("products");
 
-        for (let i = 0; i < products.length; i++) {
+        const productsGrouped = Object.values(
+          // variable that pulls in the value of products
+          products.reduce((result, product) => {
+            //reduce the product by it's previous and current state value
+            // console.log(result)
+            // set iniial value of 0 if the product idea oen't eist in result
+            console.log(products);
+            if (!result[product._id]) {
+              //if the current object (but it's id ) doesn't exist
+              // Set initial Value
+              result[product._id] = {
+                // rertun the details of the product based on it's ID and setting it with a qty of 1
+                ...product._doc,
+                qty: 1,
+              };
+            } else {
+              // Increment the number
+              result[product._id].qty += 1; //increment object qty by i
+            }
+
+            return result;
+          }, {})
+        );
+
+        for (let i = 0; i < productsGrouped.length; i++) {
+          //loop through the productsGrouped by it's length
+          const currentProduct = productsGrouped[i]; //setting varible before it's called
+          console.log(currentProduct);
           const product = await stripe.products.create({
-            name: products[i].productName,
-            images: [`${url}/images/${products[i].image}`],
+            id: currentProduct._id,
+            name: currentProduct.productName,
+            images: [`${url}/images/${currentProduct.image}`],
           });
 
           const price = await stripe.prices.create({
             product: product.id,
-            unit_amount: products[i].pricing * 100,
+            unit_amount: currentProduct.pricing * 100,
             currency: "aud",
           });
 
           line_items.push({
             price: price.id,
-            quantity: 1,
+            // quantity: 1,
+            adjustable_quantity: {
+              enabled: true,
+              minimum: 1,
+              maximum: 10,
+            },
+            quantity: currentProduct.qty,
           });
         }
         console.log(args);
@@ -112,11 +150,9 @@ const resolvers = {
         });
         console.log(session);
         return { session: session.id };
-
       } catch (err) {
         console.log(err);
       }
-
     },
   },
 
