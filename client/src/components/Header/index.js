@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo  from "../../assets/cake_logo.png";
 
 import Auth from "../../utils/auth";
 
@@ -38,6 +39,8 @@ const Header = () => {
             <h1 style={styles.textStyling} className="m-0">
               Let them Eat Cake
             </h1>
+            <img src={logo} alt="logo">
+            </img>
           </Link>
           <p style={styles.textStyling} className="m-0">
             Ecletic Cakes for every occasion. We do mean every oCakesion

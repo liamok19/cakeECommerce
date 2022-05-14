@@ -70,6 +70,7 @@ const styles = {
   },
 };
 // console.log(Home, "hometime bitches");
+
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -77,19 +78,26 @@ function App() {
         <Router>
           <div className="flex-column justify-flex-start min-100-vh">
             <Header style={styles.categoryPosition} />
-            <Canvas style={styles.modelPosition} id="modelcontainer">
+            <Canvas 
+            style={styles.modelPosition} id="modelcontainer"
+            >
               <Suspense fallback={<Loader />}>
+                <ambientLight intensity={0.05} />
+                <pointLight position={[-5, -5, -5]} />
+                <spotLight position={[1, 1, 1]} angle={0.15} penumbra={1} />
+                {/* <OrbitControls 
+                enablePan={true}
+                enableZoom={true}
+                enableRotate={true} /> */}
+              
                 <Box position={[100, 5, -200]} />
                 <Box position={[100, 25, -100]} />
                 <Box position={[-70, -5, -100]} />
                 <Box rotation={[0, 10, 0]} position={[0, 0, -40]} />
                 {/* <Environment  preset="sunset" background /> */}
               </Suspense>
-              <color attach="background" args={["#FDF9FF"]} />
+              {/* <color attach="background" args={["#FDF9FF"]} /> */}
 
-              <ambientLight intensity={0.5} />
-              <pointLight position={[-5, -5, -5]} />
-              <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
               <fog attach="fog" color="#ffccff" near={1} far={400} />
             </Canvas>
             <div className="container">

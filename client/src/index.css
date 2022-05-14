@@ -41,8 +41,8 @@ code {
 
 #modelcontainer{
   /* background: rgba(255, 192, 203, 0.566); */
-  box-shadow: 0 10px 25px rgb(0 0 0 / 20%);
-  backdrop-filter: blur(105px);
+  /* box-shadow: 0 10px 25px rgb(0 0 0 / 20%);
+  backdrop-filter: blur(105px); */
 }
 
 
