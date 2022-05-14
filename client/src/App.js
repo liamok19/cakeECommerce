@@ -89,12 +89,30 @@ function App() {
                 enablePan={true}
                 enableZoom={true}
                 enableRotate={true} /> */}
-                <Box position={[100, 0, -200]} scale={[3,3,3]}/>
-                <Box position={[100, -25, -200]} scale={[4,4,4]}/>
-                <Box position={[100, -55, -200]} scale={[5,5,5]}/>
-                <Box position={[100, 25, -100]} />
-                <Box position={[-70, -5, -100]} />
-                <Box rotation={[0, 10, 0]} position={[0, 0, -40]} />
+                {/* PinkCollection Model */}
+                <Box position={[-140, 40, -200]} scale={[3,3,3]}/>
+                <Box position={[-140, 20, -200]} scale={[4,4,4]}/>
+                <Box position={[-140, -10, -200]} scale={[5,5,5]}/>
+
+                {/* BlueCollection Model */}
+                <Box position={[-70, 40, -200]} scale={[3,3,3]}/>
+                <Box position={[-70, 20, -200]} scale={[4,4,4]}/>
+                <Box position={[-70, -10, -200]} scale={[5,5,5]}/>
+
+                {/* Down the Aisle */}
+                <Box position={[0, 40, -200]} scale={[3,3,3]}/>
+                <Box position={[0, 20, -200]} scale={[4,4,4]}/>
+                <Box position={[0, -10, -200]} scale={[5,5,5]}/>
+
+                {/* EverythingCollection Model */}
+                <Box position={[80, 40, -200]} scale={[3,3,3]}/>
+                <Box position={[80, 20, -200]} scale={[4,4,4]}/>
+                <Box position={[80, -10, -200]} scale={[5,5,5]}/>
+         
+                {/* festive Collection */}
+                <Box position={[160, 40, -200]} scale={[3,3,3]}/>
+                <Box position={[160, 20, -200]} scale={[4,4,4]}/>
+                <Box position={[160, -10, -200]} scale={[5,5,5]}/>
                 {/* <Environment  preset="sunset" background /> */}
               </Suspense>
               {/* <color attach="background" args={["#FDF9FF"]} /> */}

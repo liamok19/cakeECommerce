@@ -5,9 +5,9 @@ import logo from "../../assets/cake_logo.png";
 import Auth from "../../utils/auth";
 
 const styles = {
-  background: {
-    backgroundColor: "pink",
-  },
+  // background: {
+  //   backgroundColor: "pink",
+  // },
   textStyling: {
     textAlign: "center",
     textDecoration: "none",
