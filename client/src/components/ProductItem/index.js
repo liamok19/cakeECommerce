@@ -48,7 +48,7 @@ function ProductItem(item) {
 
   return (
     <div     
-    className="card px-1 py-1">
+    className="card px-1 py-1 cakeCard">
       <Link to={`/products/${_id}`}>
         <img 
           style={styles.imgSize}

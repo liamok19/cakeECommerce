@@ -22,6 +22,12 @@ code {
 .flexrow_cake {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  
+  /* background: rgba(255, 192, 203, 0.566);  */
+  /* box-shadow: 0 10px 25px rgb(0 0 0 / 20%);
+  backdrop-filter: blur(105px);  */
 }
 
 .px-1 {
@@ -45,6 +51,14 @@ code {
   backdrop-filter: blur(105px); */
 }
 
+.cakeCard{
+  box-shadow: 0 10px 25px rgb(0 0 0 / 20%);
+  backdrop-filter: blur(105px);
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  margin-bottom: 20px;
+}
 
 @media screen and (max-width: 768px) {
   .card {

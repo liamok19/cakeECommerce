@@ -44,9 +44,17 @@ function ProductList() {
     );
   }
 
+
+  // const styles = {
+  //   cakeCard: {
+  // box-shadow: 0 10px 25px rgb(0 0 0 / 20%);
+  // backdrop-filter: blur(105px); */
+  //   }
+  // }
   return (
     <div 
-    className="my-2">
+    className="my-2"
+    >
       <h2>Our Products:</h2>
       {state.products.length ? (
         <div className="flexrow_cake">
@@ -58,6 +66,7 @@ function ProductList() {
               productName={product.productName}
               pricing={product.pricing}
               quantity={product.quantity}
+              
             />
           ))}
         </div>

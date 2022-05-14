@@ -22,6 +22,9 @@ import Home from "./pages/Home";
 import Header from "./components/Header/index";
 import Footer from "./components/Footer/index";
 import { Box } from "./components/Box";
+import { TopTier } from "./components/Box";
+
+
 
 //model loader
 import { Html, useProgress } from "@react-three/drei";
@@ -71,7 +74,9 @@ const styles = {
 };
 // console.log(Home, "hometime bitches");
 
+
 function App() {
+  
   return (
     <ApolloProvider client={client}>
       <StoreProvider>
@@ -90,7 +95,7 @@ function App() {
                 enableZoom={true}
                 enableRotate={true} /> */}
                 {/* PinkCollection Model */}
-                <Box position={[-140, 40, -200]} scale={[3,3,3]}/>
+                <TopTier position={[-140, 40, -200]} scale={[3,3,3]}/>
                 <Box position={[-140, 20, -200]} scale={[4,4,4]}/>
                 <Box position={[-140, -10, -200]} scale={[5,5,5]}/>
 
