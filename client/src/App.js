@@ -89,8 +89,9 @@ function App() {
                 enablePan={true}
                 enableZoom={true}
                 enableRotate={true} /> */}
-              
-                <Box position={[100, 5, -200]} />
+                <Box position={[100, 0, -200]} scale={[3,3,3]}/>
+                <Box position={[100, -25, -200]} scale={[4,4,4]}/>
+                <Box position={[100, -55, -200]} scale={[5,5,5]}/>
                 <Box position={[100, 25, -100]} />
                 <Box position={[-70, -5, -100]} />
                 <Box rotation={[0, 10, 0]} position={[0, 0, -40]} />

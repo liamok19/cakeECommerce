@@ -6,14 +6,14 @@ export const Box = props => {
   // This reference will give us direct access to the mesh 
   const ref = useRef() 
   // Rotate mesh every frame, this is outside of React without overhead 
-  useFrame(() => { 
-    ref.current.rotation.x += 0.03 
-  }) 
+  // useFrame(() => { 
+  //   ref.current.rotation.x += 0.03 
+  // }) 
   return ( 
     <mesh 
       {...props} 
       ref={ref}> 
-      <torusGeometry  args={[10, 5, 16, 100 ]} /> 
+      <cylinderGeometry  args={[5, 5, 7, 32]} /> 
       <meshStandardMaterial color='#FFE5B4' /> 
     </mesh> 
   ) 
