@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo  from "../../assets/cake_logo.png";
+import logo from "../../assets/cake_logo.png";
 
 import Auth from "../../utils/auth";
 
@@ -18,6 +18,11 @@ const styles = {
     textDecoration: "none",
     color: "#36454F",
   },
+  logoStyling: {
+    alignContent: "center", 
+    width: "250px", 
+    height: "250px",
+  }, 
 };
 
 const Header = () => {
@@ -30,16 +35,19 @@ const Header = () => {
 
   return (
     <header
-      style={styles.background}
+      // style={styles.background}
       className="bg-primary text-light mb-4 py-3 flex-row align-center"
     >
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
-          <Link style={styles.textStyling} className="text-light" to="/">
-            <h1 style={styles.textStyling} className="m-0">
+          <Link style={styles.logoStyling} className="text-light" to="/">
+            {/* <h1 style={styles.textStyling} className="m-0">
               Let them Eat Cake
-            </h1>
-            <img src={logo} alt="logo">
+            </h1> */}
+            <img 
+              style={styles.logoStyling} 
+              src={logo} 
+              alt="logo">
             </img>
           </Link>
           <p style={styles.textStyling} className="m-0">
