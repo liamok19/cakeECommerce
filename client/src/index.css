@@ -45,11 +45,11 @@ code {
   text-align: center;
 }
 
-#modelcontainer{
+/* #modelcontainer{
   /* background: rgba(255, 192, 203, 0.566); */
   /* box-shadow: 0 10px 25px rgb(0 0 0 / 20%);
-  backdrop-filter: blur(105px); */
-}
+  backdrop-filter: blur(105px); 
+} */
 
 .cakeCard{
   box-shadow: 0 10px 25px rgb(0 0 0 / 20%);
@@ -60,6 +60,9 @@ code {
   margin-bottom: 20px;
 }
 
+.productsContainer {
+  margin-top: 100pt;
+}
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;

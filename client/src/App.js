@@ -22,9 +22,21 @@ import Home from "./pages/Home";
 import Header from "./components/Header/index";
 import Footer from "./components/Footer/index";
 import { Box } from "./components/Box";
-import { TopTier } from "./components/Box";
 
+//Cake 1
+import { TopTierPink, MidTierPink, BtmTierPink } from "./components/Box";
 
+//Cake 2
+import { TopTierBlue, MidTierBlue, BtmTierBlue } from "./components/Box";
+
+//Cake 3
+import { TopTierPearl, MidTierPearl, BtmTierPearl } from "./components/Box";
+
+//Cake 4 
+import { TopTierChoc, MidTierChoc, BtmTierChoc } from "./components/Box";
+
+//Cake 5
+import { TopTierFestive, MidTierFestive, BtmTierFestive } from "./components/Box";
 
 //model loader
 import { Html, useProgress } from "@react-three/drei";
@@ -71,6 +83,9 @@ const styles = {
     zIndex: -1,
     height: "145vh",
   },
+  cakeFour: {
+    color: "pink"
+  }
 };
 // console.log(Home, "hometime bitches");
 
@@ -95,34 +110,34 @@ function App() {
                 enableZoom={true}
                 enableRotate={true} /> */}
                 {/* PinkCollection Model */}
-                <TopTier position={[-140, 40, -200]} scale={[3,3,3]}/>
-                <Box position={[-140, 20, -200]} scale={[4,4,4]}/>
-                <Box position={[-140, -10, -200]} scale={[5,5,5]}/>
+                <TopTierPink position={[-170, 40, -240]} scale={[3,3,3]}/>
+                <MidTierPink position={[-170, 20, -240]} scale={[4,4,4]}/>
+                <BtmTierPink position={[-170, -10, -240]} scale={[5,5,5]}/>
 
                 {/* BlueCollection Model */}
-                <Box position={[-70, 40, -200]} scale={[3,3,3]}/>
-                <Box position={[-70, 20, -200]} scale={[4,4,4]}/>
-                <Box position={[-70, -10, -200]} scale={[5,5,5]}/>
+                <TopTierBlue position={[-70, 40, -210]} scale={[3,3,3]}/>
+                <MidTierBlue position={[-70, 20, -210]} scale={[4,4,4]}/>
+                <BtmTierBlue position={[-70, -10, -210]} scale={[5,5,5]}/>
 
                 {/* Down the Aisle */}
-                <Box position={[0, 40, -200]} scale={[3,3,3]}/>
-                <Box position={[0, 20, -200]} scale={[4,4,4]}/>
-                <Box position={[0, -10, -200]} scale={[5,5,5]}/>
+                <TopTierPearl position={[0, 40, -180]} scale={[3,3,3]}/>
+                <MidTierPearl position={[0, 20, -180]} scale={[4,4,4]}/>
+                <BtmTierPearl position={[0, -10, -180]} scale={[5,5,5]}/>
 
                 {/* EverythingCollection Model */}
-                <Box position={[80, 40, -200]} scale={[3,3,3]}/>
-                <Box position={[80, 20, -200]} scale={[4,4,4]}/>
-                <Box position={[80, -10, -200]} scale={[5,5,5]}/>
+                <TopTierChoc position={[80, 40, -210]} scale={[3,3,3]}/>
+                <MidTierChoc position={[80, 20, -210]} scale={[4,4,4]}/>
+                <BtmTierChoc position={[80, -10, -210]} scale={[5,5,5]}/>
          
                 {/* festive Collection */}
-                <Box position={[160, 40, -200]} scale={[3,3,3]}/>
-                <Box position={[160, 20, -200]} scale={[4,4,4]}/>
-                <Box position={[160, -10, -200]} scale={[5,5,5]}/>
+                <TopTierFestive position={[180, 40, -240]} scale={[3,3,3]} style={styles.cakeFour}/>
+                <MidTierFestive position={[180, 20, -240]} scale={[4,4,4]}/>
+                <BtmTierFestive position={[180, -10, -240]} scale={[5,5,5]}/>
                 {/* <Environment  preset="sunset" background /> */}
               </Suspense>
               {/* <color attach="background" args={["#FDF9FF"]} /> */}
 
-              <fog attach="fog" color="#ffccff" near={1} far={400} />
+              {/* <fog attach="fog" color="#ffccff" near={1} far={400} /> */}
             </Canvas>
             <div className="container">
               <Routes>

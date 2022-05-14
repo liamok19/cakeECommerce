@@ -53,7 +53,7 @@ function ProductList() {
   // }
   return (
     <div 
-    className="my-2"
+    className="my-2 productsContainer"
     >
       <h2>Our Products:</h2>
       {state.products.length ? (
