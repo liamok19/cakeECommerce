@@ -83,9 +83,6 @@ const styles = {
     zIndex: -1,
     height: "145vh",
   },
-  cakeFour: {
-    color: "pink"
-  }
 };
 // console.log(Home, "hometime bitches");
 
@@ -134,6 +131,8 @@ function App() {
                 <MidTierFestive position={[180, 20, -240]} scale={[4,4,4]}/>
                 <BtmTierFestive position={[180, -10, -240]} scale={[5,5,5]}/>
                 {/* <Environment  preset="sunset" background /> */}
+                {/* <Box position={[180, -100, -240]} scale={[15,15,15]}/> */}
+
               </Suspense>
               {/* <color attach="background" args={["#FDF9FF"]} /> */}
 

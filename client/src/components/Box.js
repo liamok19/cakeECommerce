@@ -7,13 +7,13 @@ export const Box = props => {
   const ref = useRef() 
   // Rotate mesh every frame, this is outside of React without overhead 
   useFrame(() => { 
-    ref.current.rotation.y += 0.03 
+    ref.current.rotation.y = ref.current.rotation.x += 0.01 
   }) 
   return ( 
     <mesh 
       {...props} 
       ref={ref}> 
-      <cylinderGeometry  args={[5, 5, 7, 32]} /> 
+      <torusGeometry  args={[5, 5, 7, 32]} /> 
       <meshStandardMaterial color='#FFE5B4' /> 
     </mesh> 
   ) 

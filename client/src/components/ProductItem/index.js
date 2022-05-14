@@ -1,56 +1,52 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { pluralize } from "../../utils/helpers"
+import { pluralize } from "../../utils/helpers";
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 const styles = {
   imgSize: {
-    width: 100, 
-    height: 100
+    width: 100,
+    height: 100,
   },
-
-}
+};
 function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
 
-  const {
-    image,
-    productName,
-    _id,
-    pricing,
-    quantity
-  } = item;
+  const { image, productName, _id, pricing, quantity } = item;
 
-  const { cart } = state
+  const { cart } = state;
 
   const addToCart = () => {
-    const itemInCart = cart.find((cartItem) => cartItem._id === _id)
+    const itemInCart = cart.find((cartItem) => cartItem._id === _id);
     if (itemInCart) {
       dispatch({
         type: UPDATE_CART_QUANTITY,
         _id: _id,
-        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
       });
-      idbPromise('cart', 'put', {
+      idbPromise("cart", "put", {
         ...itemInCart,
-        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
       });
     } else {
       dispatch({
         type: ADD_TO_CART,
-        product: { ...item, purchaseQuantity: 1 }
+        product: { ...item, purchaseQuantity: 1 },
       });
-      idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
+      idbPromise("cart", "put", { ...item, purchaseQuantity: 1 });
     }
-  }
+  };
 
   return (
-    <div     
-    className="card px-1 py-1 cakeCard">
+    
+    <div className="card px-1 py-1 cakeCard">
+      <Stack>
       <Link to={`/products/${_id}`}>
-        <img 
+        <img
           style={styles.imgSize}
           alt={productName}
           src={`/images/${image}`}
@@ -58,11 +54,18 @@ function ProductItem(item) {
         <p>{productName}</p>
       </Link>
       <div>
-        <div>{quantity} {pluralize("item", quantity)} in stock</div>
+        <div>
+          {quantity} {pluralize("item", quantity)} in stock
+        </div>
         <span>${pricing}</span>
       </div>
-      <button onClick={addToCart}>Add to cart</button>
+      <Button 
+        onClick={addToCart}>
+        Add to cart
+      </Button>
+      </Stack>
     </div>
+    
   );
 }
 
