@@ -9,9 +9,18 @@ const styles = {
   //   backgroundColor: "pink",
   // },
   textStyling: {
+    // textAlign: "flexstart",
+    // textDecoration: "none",
+    // marginRight: "4px",
+    transform: "rotate(-90deg)",
+    textAlign: "center",
+    marginTop: "110px",
+    fontFamily: "Noto Sans, sans-serif",
+    position: "fixed",
+  },
+  loginStyling: {
     textAlign: "center",
     textDecoration: "none",
-    color: "#36454F",
   },
   btnStyling: {
     marginLeft: 40,
@@ -40,10 +49,9 @@ const Header = () => {
     >
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
+        <h2 style={styles.textStyling}>Let them Eat Cake</h2>
           <Link style={styles.logoStyling} className="text-light" to="/">
-            {/* <h1 style={styles.textStyling} className="m-0">
-              Let them Eat Cake
-            </h1> */}
+  
             <img 
               style={styles.logoStyling} 
               src={logo} 
@@ -54,7 +62,7 @@ const Header = () => {
             Ecletic Cakes for every occasion. We do mean every oCakesion
           </p> */}
         </div>
-        <div style={styles.textStyling}>
+        <div style={styles.loginStyling}>
           {Auth.loggedIn() ? (
             <>
               <Link className="btn btn-lg btn-info m-2" to="/me">
