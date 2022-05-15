@@ -50,9 +50,9 @@ const Header = () => {
               alt="logo">
             </img>
           </Link>
-          <p style={styles.textStyling} className="m-0">
+          {/* <p style={styles.textStyling} className="m-0">
             Ecletic Cakes for every occasion. We do mean every oCakesion
-          </p>
+          </p> */}
         </div>
         <div style={styles.textStyling}>
           {Auth.loggedIn() ? (

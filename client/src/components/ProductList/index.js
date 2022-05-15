@@ -55,7 +55,7 @@ function ProductList() {
     <div 
     className="my-2 productsContainer"
     >
-      <h2>Our Products:</h2>
+      {/* <h2>Our Products:</h2> */}
       {state.products.length ? (
         <div className="flexrow_cake">
           {filterProducts().map((product) => (
