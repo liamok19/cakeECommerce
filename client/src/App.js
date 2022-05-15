@@ -16,12 +16,13 @@ import { Canvas } from "@react-three/fiber";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
+import Detail from "./pages/Detail";
 
 //Components import
 // import Model from "./components/Model";
 import Header from "./components/Header/index";
 import Footer from "./components/Footer/index";
-import { Box } from "./components/Box";
+// import { Box } from "./components/Box";
 
 //Cake 1
 import { TopTierPink, MidTierPink, BtmTierPink } from "./components/Box";
@@ -32,11 +33,15 @@ import { TopTierBlue, MidTierBlue, BtmTierBlue } from "./components/Box";
 //Cake 3
 import { TopTierPearl, MidTierPearl, BtmTierPearl } from "./components/Box";
 
-//Cake 4 
+//Cake 4
 import { TopTierChoc, MidTierChoc, BtmTierChoc } from "./components/Box";
 
 //Cake 5
-import { TopTierFestive, MidTierFestive, BtmTierFestive } from "./components/Box";
+import {
+  TopTierFestive,
+  MidTierFestive,
+  BtmTierFestive,
+} from "./components/Box";
 
 //model loader
 import { Html, useProgress } from "@react-three/drei";
@@ -81,23 +86,19 @@ const styles = {
     left: 0,
     top: 0,
     zIndex: -1,
-    height: "145vh",
+    height: "285vh",
   },
 };
 // console.log(Home, "hometime bitches");
 
-
 function App() {
-  
   return (
     <ApolloProvider client={client}>
       <StoreProvider>
         <Router>
           <div className="flex-column justify-flex-start min-100-vh">
             <Header style={styles.categoryPosition} />
-            <Canvas 
-            style={styles.modelPosition} id="modelcontainer"
-            >
+            <Canvas style={styles.modelPosition} id="modelcontainer">
               <Suspense fallback={<Loader />}>
                 <ambientLight intensity={0.05} />
                 <pointLight position={[-5, -5, -5]} />
@@ -107,32 +108,31 @@ function App() {
                 enableZoom={true}
                 enableRotate={true} /> */}
                 {/* PinkCollection Model */}
-                <TopTierPink position={[-170, 40, -240]} scale={[3,3,3]}/>
-                <MidTierPink position={[-170, 20, -240]} scale={[4,4,4]}/>
-                <BtmTierPink position={[-170, -10, -240]} scale={[5,5,5]}/>
+                <TopTierPink position={[-80, 70, -240]} scale={[1, 1, 1]} />
+                <MidTierPink position={[-80, 55, -240]} scale={[2, 2, 2]} />
+                <BtmTierPink position={[-80, 32, -240]} scale={[3, 3, 3]} />
 
                 {/* BlueCollection Model */}
-                <TopTierBlue position={[-70, 40, -210]} scale={[3,3,3]}/>
-                <MidTierBlue position={[-70, 20, -210]} scale={[4,4,4]}/>
-                <BtmTierBlue position={[-70, -10, -210]} scale={[5,5,5]}/>
+                <TopTierBlue position={[-35, 70, -210]} scale={[1, 1, 1]} />
+                <MidTierBlue position={[-35, 55, -210]} scale={[2, 2, 2]} />
+                <BtmTierBlue position={[-35, 32, -210]} scale={[3, 3, 3]} />
 
                 {/* Down the Aisle */}
-                <TopTierPearl position={[0, 40, -180]} scale={[3,3,3]}/>
-                <MidTierPearl position={[0, 20, -180]} scale={[4,4,4]}/>
-                <BtmTierPearl position={[0, -10, -180]} scale={[5,5,5]}/>
+                <TopTierPearl position={[0, 70, -180]} scale={[1, 1, 1]} />
+                <MidTierPearl position={[0, 55, -180]} scale={[2, 2, 2]} />
+                <BtmTierPearl position={[0, 32, -180]} scale={[3, 3, 3]} />
 
                 {/* EverythingCollection Model */}
-                <TopTierChoc position={[80, 40, -210]} scale={[3,3,3]}/>
-                <MidTierChoc position={[80, 20, -210]} scale={[4,4,4]}/>
-                <BtmTierChoc position={[80, -10, -210]} scale={[5,5,5]}/>
-         
+                <TopTierChoc position={[35, 70, -210]} scale={[1, 1, 1]} />
+                <MidTierChoc position={[35, 55, -210]} scale={[2, 2, 2]} />
+                <BtmTierChoc position={[35, 32, -210]} scale={[3, 3, 3]} />
+
                 {/* festive Collection */}
-                <TopTierFestive position={[180, 40, -240]} scale={[3,3,3]} style={styles.cakeFour}/>
-                <MidTierFestive position={[180, 20, -240]} scale={[4,4,4]}/>
-                <BtmTierFestive position={[180, -10, -240]} scale={[5,5,5]}/>
+                <TopTierFestive position={[80, 70, -240]} scale={[1, 1, 1]} />
+                <MidTierFestive position={[80, 55, -240]} scale={[2, 2, 2]} />
+                <BtmTierFestive position={[80, 32, -240]} scale={[3, 3, 3]} />
                 {/* <Environment  preset="sunset" background /> */}
                 {/* <Box position={[180, -100, -240]} scale={[15,15,15]}/> */}
-
               </Suspense>
               {/* <color attach="background" args={["#FDF9FF"]} /> */}
 
@@ -143,6 +143,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
+                <Route path="/products/:id" element={<Detail />} />
               </Routes>
             </div>
 
