@@ -28,3 +28,8 @@ Test Card Methos:
 https://stripe.com/docs/testing#cards
 
 //several items in cart should add ontop of eachother
+
+For later atas 
+mongodb+srv://lokipoki:<password>@cluster0.hdhya.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+
