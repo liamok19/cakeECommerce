@@ -2,11 +2,13 @@ import React from "react";
 import ProductList from "../components/ProductList";
 import CategoryMenu from "../components/CategoryMenu";
 import Cart from "../components/Cart";
+import CanvasModel from "../components/Canvas/canvas";
 
 const Home = () => {
   return (
     <div className="container">
       <CategoryMenu />
+      <CanvasModel />
       <ProductList />
       <Cart />
     </div>

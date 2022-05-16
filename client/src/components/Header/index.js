@@ -36,7 +36,7 @@ const styles = {
     height: "250px",
   }, 
   containerStyling: {
-    marginBottom: "35vh",
+    marginBottom: "5vh",
   }
 };
 

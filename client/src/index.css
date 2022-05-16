@@ -1,3 +1,4 @@
+
 :root {
   --cakeoption-one: calc(1rem * 0.5);
   --cakeoption-two: calc(1rem);
@@ -64,6 +65,34 @@ code {
 
 .productsContainer {
   margin-top: 120pt;
+}
+
+.aboutCard2 {
+  margin-left: 20px;
+
+}
+
+.pattern01{
+  background: url(../src/assets/webb.png);
+   /* color: (10,100,1); */
+   /* padding: 270px 0; */
+   /* perspective:1000px;
+   perspective-origin: 50% 50%;
+   text-align: center;
+   margin-bottom: 0; */
+   animation: animate 2s linear infinite;
+   box-shadow: 0 10px 25px rgb(0 0 0 / 20%);
+  backdrop-filter: blur(2px);
+}
+
+@keyframes animate {
+  from {
+    background-position: 0 -120px ;
+  }
+  to{
+    background-position: 0 0 ;
+  }
+  
 }
 @media screen and (max-width: 768px) {
   .card {
