@@ -5,8 +5,18 @@ import { LOGIN_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 const styles = {
-  background: {
-    backgroundColor: 'pink',
+  headerPositioning: {
+    marginLeft: "12.5vw",
+    marginBottom: "-14px",
+    marginTop: "-60px",
+  },
+  bodyPositioning: {
+    marginLeft: "0.2vw",
+    fontSize: "3vw",
+  },
+  firstBodyPosition: {
+    marginLeft: "12vw",
+    fontSize: "3vw",
   }
 }
 
@@ -49,8 +59,8 @@ const Login = (props) => {
     <main style={styles.background} className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
         <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
-          <div className="card-body">
+          <h4 style={styles.headerPositioning} className="card-header bg-dark text-light p-2 fontstyle">Login</h4>
+          <div style={styles.firstBodyPosition} className="card-body fontstyle">
             {data ? (
               <p>
                 Success! You may now head{' '}
@@ -59,23 +69,25 @@ const Login = (props) => {
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <input
-                  className="form-input"
+                  className="form-input fontstyle"
                   placeholder="Your email"
                   name="email"
                   type="email"
                   value={formState.email}
                   onChange={handleChange}
+                  style={styles.firstBodyPosition}
                 />
                 <input
-                  className="form-input"
+                  className="form-input fontstyle"
                   placeholder="******"
                   name="password"
                   type="password"
                   value={formState.password}
                   onChange={handleChange}
+                  style={styles.firstBodyPosition}
                 />
                 <button
-                  className="btn btn-block btn-primary"
+                  className="btn btn-block btn-primary fontstyle"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >

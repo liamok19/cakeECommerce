@@ -1,4 +1,6 @@
+
 const db = require("../config/connection");
+
 const { User, Product, Category } = require("../models");
 // const userSeeds = require("../seeders/userSeeds.json");
 // const productSeeds = require("../seeders/productSeeds.json");

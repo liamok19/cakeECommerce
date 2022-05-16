@@ -27,6 +27,10 @@ body {
   font-size: 6vw;
   z-index: -1;
 }
+.submitPositioning {
+  margin-left: 3vw;
+  font-size: 3vw;
+}
 
 .flexrow_cake {
   display: flex;
