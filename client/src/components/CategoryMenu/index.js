@@ -56,19 +56,15 @@ function CategoryMenu() {
     },
     textStyling: {
       textAlign: "start",
-      // textDecoration: "none",
       marginLeft: "10px",
       marginBottom: "30px",
-      // transform: "rotate(-90deg)",
-      // textAlign: "center",
-      fontFamily: "Noto Sans, sans-serif",
-      // position: "fixed",
+      fontSize: "6vw",
     },
   };
   return (
     <Stack>
     <div style={styles.alignedText}>
-    <h2 style={styles.textStyling}>Choose a Category:</h2>
+    <h2 className="fontstyle" style={styles.textStyling}>Choose a Category:</h2>
       {categories.map((item) => (
         <Button
         variant="text"

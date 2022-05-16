@@ -24,7 +24,8 @@ body {
   font-family: 'Bitter', serif;
   font-family: 'Poppins', sans-serif;
   font-family: 'Six Caps', sans-serif;
-
+  font-size: 6vw;
+  z-index: 0;
 }
 
 .flexrow_cake {

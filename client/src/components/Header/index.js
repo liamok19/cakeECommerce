@@ -17,6 +17,7 @@ const styles = {
     textAlign: "center",
     marginTop: "110px",
     position: "fixed",
+    opacity: 0.5,
   },
   loginStyling: {
     // textAlign: "center",
@@ -36,6 +37,12 @@ const styles = {
   }, 
   containerStyling: {
     marginBottom: "5vh",
+  },
+  logoutStyling: {
+    marginLeft: "13vw",
+    fontSize: "3vw", 
+    textDecoration: "none",
+    color: "black"
   }
 };
 
@@ -68,10 +75,10 @@ const Header = () => {
           <div style={styles.loginStyling}>
           {Auth.loggedIn() ? (
             <>
-              <Link className="btn btn-lg btn-info m-2" to="/me">
+              <Link style={styles.logoutStyling} className="btn btn-lg btn-info m-2 fontstyle" to="/me">
                 {Auth.getUser().data.username}'s profile
               </Link>
-              <button className="btn btn-lg btn-light m-2" onClick={logout}>
+              <button style={styles.logoutStyling} className="btn btn-lg btn-light m-2 fontstyle" onClick={logout}>
                 Logout
               </button>
             </>
@@ -79,14 +86,14 @@ const Header = () => {
             <>
               <Link
                 style={styles.btnStyling}
-                className="btn btn-lg btn-info m-2"
+                className="btn btn-lg btn-info m-2 fontstyle"
                 to="/login"
               >
                 Login
               </Link>
               <Link
                 style={styles.btnStyling}
-                className="btn btn-lg btn-light m-2"
+                className="btn btn-lg btn-light m-2 fontstyle"
                 to="/signup"
               >
                 Signup
