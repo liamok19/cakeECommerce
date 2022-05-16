@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/cake_logo.png";
 
-
-
 import Auth from "../../utils/auth";
 
 const styles = {
