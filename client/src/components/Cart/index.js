@@ -8,9 +8,22 @@ import Auth from "../../utils/auth";
 import { useStoreContext } from "../../utils/GlobalState";
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
 import "./style.css";
+// import cartImg from '../../../src/assets/cake_logo.png';
 
 const stripePromise = loadStripe("pk_test_51KxpOYDyTG5YEiw6W8LavFkfABSXDokBPo2x86N5K5Ef3hPfsqa7EMLfw3FzbdETMrFBS3lRPY4ajPdRJm6ZR2wn00Lhr99oyc");
 
+const styles = {
+  fontStyling: {
+    fontSize: "30px",
+    marginLeft: "3vw"
+  },
+  headerCheckoutStyling: {
+    fontSize: "50px",
+  },
+  checkoutCard: {
+    background:" url(../src/assets/webb.png)",
+  },
+}
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
@@ -64,18 +77,22 @@ const Cart = () => {
     return (
       <div className="cart-closed" onClick={toggleCart}>
         <span role="img" aria-label="trash">
-          🛒
+           🛒
+           {/* <img 
+           src={imgCart} 
+           alt="imgCart">
+           </img> */}
         </span>
       </div>
     );
   }
 
   return (
-    <div className="cart">
-      <div className="close" onClick={toggleCart}>
+    <div  className="cart">
+      <div className="close fontstyle" onClick={toggleCart}>
         [close]
       </div>
-      <h2>Shopping Cart</h2>
+      <h2 style={styles.headerCheckoutStyling} className="fontstyle" >[Shopping Cart]</h2>
       {state.cart.length ? (
         <div>
           {state.cart.map((item) => (
@@ -86,17 +103,14 @@ const Cart = () => {
             <strong>Total: ${calculateTotal()}</strong>
 
             {Auth.loggedIn() ? (
-              <button onClick={submitCheckout}>Checkout</button>
+              <button className="fontstyle" onClick={submitCheckout}>Checkout</button>
             ) : (
-              <span>(log in to check out)</span>
+              <span style={styles.fontStyling} className="fontstyle" >(log in to check out)</span>
             )}
           </div>
         </div>
       ) : (
-        <h3>
-          <span role="img" aria-label="shocked">
-            😱
-          </span>
+        <h3 style={styles.fontStyling} className="fontstyle" >
           You haven't added anything to your cart yet!
         </h3>
       )}
