@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/cake_logo.png";
 
+
+
 import Auth from "../../utils/auth";
 
 const styles = {
@@ -16,7 +18,6 @@ const styles = {
     transform: "rotate(-90deg)",
     textAlign: "center",
     marginTop: "110px",
-    fontFamily: "Noto Sans, sans-serif",
     position: "fixed",
   },
   loginStyling: {
@@ -55,7 +56,9 @@ const Header = () => {
     >
       <div  className="container flex-row justify-space-between-lg justify-center align-center">
         <div style={styles.containerStyling}>
-        <h2 style={styles.textStyling}>Let them Eat Cake</h2>
+        <h2  
+        className="fontstyle"
+        style={styles.textStyling}>Let them Eat Cake</h2>
           <Link style={styles.logoStyling} className="text-light" to="/">
   
             <img 
