@@ -24,5 +24,8 @@
   "homepage": "https://github.com/liamok19/cakeECommerce#readme",
   "devDependencies": {
     "concurrently": "^7.1.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1"
   }
 }
