@@ -25,6 +25,7 @@ import About from "./components/About/aboutMe"
 
 //model loader
 import { StoreProvider } from "./utils/GlobalState";
+import Playground from "./pages/Playground";
 
 // The hook returns much more than just the progress so there is a lot you can do there to give the user more information about the loading status of the application.
 
@@ -71,9 +72,12 @@ function App() {
             <div className="container">
               <Routes>
                 <Route path="/" element={<Home />} />
+
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/products/:id" element={<Detail />} />
+
+                <Route path="/playground" element={<Playground />} />
               </Routes>
             </div>
 

@@ -17,7 +17,7 @@ const styles = {
   cakeHeader: {
     fontSize: "60px",
     // textDecoration: "none",
-    color: "Black"
+    color: "Black",
   },
   stockText: {
     fontSize: "40px",
@@ -55,10 +55,11 @@ function ProductItem(item) {
   return (
     <div className="card px-1 py-1 cakeCard">
       <Stack>
-        <Link 
-        style={styles.cakeHeader}
-        className="prouctHeader"
-        to={`/products/${_id}`}>
+        <Link
+          style={styles.cakeHeader}
+          className="prouctHeader"
+          to={`/products/${_id}`}
+        >
           <p>{productName}</p>
           <img
             style={styles.imgSize}
@@ -67,16 +68,12 @@ function ProductItem(item) {
           />
         </Link>
         <div>
-          <div 
-          style={styles.stockText}
-          className="fontstyle">
+          <div style={styles.stockText} className="fontstyle">
             {quantity} {pluralize("item", quantity)} in stock
           </div>
-          <span className="priceCurrency">
-            ${pricing} - AUD
-          </span>
+          <span className="priceCurrency">${pricing} - AUD</span>
         </div>
-        <Button className="fontstyle" onClick={addToCart}>
+        <Button className="addCartStyle" onClick={addToCart}>
           Add to cart
         </Button>
       </Stack>

@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 
 //model Loader:
 import { Html, useProgress } from "@react-three/drei";
@@ -29,9 +29,17 @@ import {
 } from "../Box";
 
 function CanvasModel() {
+  const [hovered, setHovered] = useState(false);
+
+  useEffect(() => {
+    document.body.style.cursor = hovered ? "crosshair" : "auto";
+  }, [hovered]);
+
+
   const Loader = () => {
     const { progress } = useProgress();
     return <Html center>{progress} % loaded</Html>;
+
   };
 
   const styles = {
@@ -39,10 +47,12 @@ function CanvasModel() {
       position: "absolute",
       left: 0,
       top: 0,
-      zIndex: -1,
+      // zIndex: -1,
       height: "285vh",
     },
   };
+
+  
   return (
   <Canvas style={styles.modelPosition} id="modelcontainer">
     <Suspense fallback={<Loader />}>
@@ -54,31 +64,32 @@ function CanvasModel() {
             enableZoom={true}
             enableRotate={true} /> */}
       {/* PinkCollection Model */}
-      <TopTierPink position={[-80, 0, -240]} scale={[1, 1, 1]} />
-      <MidTierPink position={[-80, -15, -240]} scale={[2, 2, 2]} />
-      <BtmTierPink position={[-80, -35, -240]} scale={[3, 3, 3]} />
+      <TopTierPink hovered={hovered} setHovered={setHovered} position={[-80, 0, -240]} scale={[1, 1, 1]} />
+      <MidTierPink hovered={hovered} setHovered={setHovered} position={[-80, -15, -240]} scale={[2, 2, 2]} />
+      <BtmTierPink hovered={hovered} setHovered={setHovered} position={[-80, -35, -240]} scale={[3, 3, 3]} />
+      {/* <BtmTierPink position={[-80, -35, -1000000]} scale={[3, 3, 3]} /> */}
 
       {/* BlueCollection Model */}
-      <TopTierBlue position={[-35, 0, -210]} scale={[1, 1, 1]} />
-      <MidTierBlue position={[-35, -15, -210]} scale={[2, 2, 2]} />
-      <BtmTierBlue position={[-35, -35, -210]} scale={[3, 3, 3]} />
+      <TopTierBlue hovered={hovered} setHovered={setHovered} position={[-35, 0, -210]} scale={[1, 1, 1]} />
+      <MidTierBlue hovered={hovered} setHovered={setHovered} position={[-35, -15, -210]} scale={[2, 2, 2]} />
+      <BtmTierBlue hovered={hovered} setHovered={setHovered} position={[-35, -35, -210]} scale={[3, 3, 3]} />
 
       {/* Down the Aisle */}
-      <TopTierPearl position={[0, 0, -180]} scale={[1, 1, 1]} />
-      <MidTierPearl position={[0, -15, -180]} scale={[2, 2, 2]} />
-      <BtmTierPearl position={[0, -35, -180]} scale={[3, 3, 3]} />
+      <TopTierPearl hovered={hovered} setHovered={setHovered} position={[0, 0, -180]} scale={[1, 1, 1]} />
+      <MidTierPearl hovered={hovered} setHovered={setHovered} position={[0, -15, -180]} scale={[2, 2, 2]} />
+      <BtmTierPearl hovered={hovered} setHovered={setHovered} position={[0, -35, -180]} scale={[3, 3, 3]} />
 
       {/* EverythingCollection Model */}
-      <TopTierChoc position={[35, 0, -210]} scale={[1, 1, 1]} />
-      <MidTierChoc position={[35, -15, -210]} scale={[2, 2, 2]} />
-      <BtmTierChoc position={[35, -35, -210]} scale={[3, 3, 3]} />
+      <TopTierChoc hovered={hovered} setHovered={setHovered} position={[35, 0, -210]} scale={[1, 1, 1]} />
+      <MidTierChoc hovered={hovered} setHovered={setHovered} position={[35, -15, -210]} scale={[2, 2, 2]} />
+      <BtmTierChoc hovered={hovered} setHovered={setHovered} position={[35, -35, -210]} scale={[3, 3, 3]} />
 
       {/* festive Collection */}
-      <TopTierFestive position={[80, 0, -240]} scale={[1, 1, 1]} />
-      <MidTierFestive position={[80, -15, -240]} scale={[2, 2, 2]} />
-      <BtmTierFestive position={[80, -35, -240]} scale={[3, 3, 3]} />
+      <TopTierFestive hovered={hovered} setHovered={setHovered} position={[80, 0, -240]} scale={[1, 1, 1]} />
+      <MidTierFestive hovered={hovered} setHovered={setHovered} position={[80, -15, -240]} scale={[2, 2, 2]} />
+      <BtmTierFestive hovered={hovered} setHovered={setHovered} position={[80, -35, -240]} scale={[3, 3, 3]} />
       {/* <Environment  preset="sunset" background /> */}
-      {/* <Box position={[180, -100, -240]} scale={[15,15,15]}/> */}
+      {/* <Box hovered={hovered} setHovered={setHovered} position={[180, -100, -240]} scale={[15,15,15]}/> */}
     </Suspense>
     {/* <color attach="background" args={["#FDF9FF"]} /> */}
 

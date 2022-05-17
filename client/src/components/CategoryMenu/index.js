@@ -53,6 +53,8 @@ function CategoryMenu() {
     },
     buttonSpacing: {
       marginLeft: 40,
+      zIndex: 1000000,
+      wordWrap: "break-word",
     },
     textStyling: {
       textAlign: "start",

@@ -14,7 +14,7 @@ db.once("open", async () => {
       { name: "The Pink Collection" },
       { name: "The Blue Collection" },
       { name: "The down the aisle" },
-      { name: "The one that goes with Everything" },
+      { name: "The Everything" },
       { name: "The Festive" },
     ]);
 
