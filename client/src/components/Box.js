@@ -1,5 +1,7 @@
-import React, { useRef } from 'react'; 
-import { useFrame } from '@react-three/fiber'; 
+import React, { useEffect, useRef, useState } from 'react'; 
+import { useFrame } from '@react-three/fiber';
+// import { Preload, useCursor } from '@react-three/drei'
+
 
 
 export const Box = props => { 
@@ -20,6 +22,11 @@ export const Box = props => {
 } 
 
 export const TopTierPink = props =>{
+  // const [hovered, setHovered] = useState(false);
+
+  // useEffect(() =>{
+  //   document.body.style.cursor = hovered ? 'grab' : 'auto';
+  // }, [hovered]);
   // const ref = useRef() 
   // // Rotate mesh every frame, this is outside of React without overhead 
   // useFrame(() => { 
@@ -29,6 +36,8 @@ export const TopTierPink = props =>{
     <mesh 
       {...props} 
       // ref={ref}
+      // onPointerOver={() => setHovered(true)}
+      // onPointerOut={() => setHovered(false)}
       > 
       <cylinderGeometry  args={[5, 5, 7, 32]} /> 
       <meshStandardMaterial color='pink' /> 
@@ -36,6 +45,16 @@ export const TopTierPink = props =>{
   ) 
 }
 export const MidTierPink = props =>{
+  const [hovered, setHovered] = useState(false)
+
+  useEffect(() => {
+    document.body.style.cursor = hovered ? 'crosshair' : 'auto'
+  }, [hovered])
+  
+    // useFrame(()=> {
+    //   document.body.current.position.z += 0.1
+    // }
+    // )
   // const ref = useRef() 
   // // Rotate mesh every frame, this is outside of React without overhead 
   // useFrame(() => { 
@@ -45,6 +64,8 @@ export const MidTierPink = props =>{
     <mesh 
       {...props} 
       // ref={ref}
+      onPointerOver={() => setHovered(true)}
+      onPointerOut={() => setHovered(false)}
       > 
       <cylinderGeometry  args={[5, 5, 7, 32]} /> 
       <meshStandardMaterial color='pink' /> 
@@ -53,6 +74,11 @@ export const MidTierPink = props =>{
 }
 
 export const BtmTierPink = props =>{
+  const [hovered, setHovered] = useState(false)
+
+  useEffect(() => {
+    document.body.style.cursor = hovered ? 'crosshair' : 'auto'
+  }, [hovered])
   // const ref = useRef() 
   // // Rotate mesh every frame, this is outside of React without overhead 
   // useFrame(() => { 
@@ -61,6 +87,8 @@ export const BtmTierPink = props =>{
   return ( 
     <mesh 
       {...props} 
+      onPointerOver={() => setHovered(true)}
+      onPointerOut={() => setHovered(false)}
       // ref={ref}
       > 
       <cylinderGeometry  args={[5, 5, 7, 32]} /> 

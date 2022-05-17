@@ -64,7 +64,7 @@ function ProductList() {
               _id={product._id}
               image={product.image}
               productName={product.productName}
-              pricing={product.pricing}
+              pricing={product.pricing} 
               quantity={product.quantity}
               
             />
