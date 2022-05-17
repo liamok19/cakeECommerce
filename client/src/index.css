@@ -33,10 +33,16 @@ body {
   font-family: 'Bitter', serif;
   font-family: 'Poppins', sans-serif;
   font-family: 'Six Caps', sans-serif;
-  font-size: 120px;
-  margin-left: 55vw;
+  font-size: 79px;
+  margin-left: 40vw;
   margin-top: auto;
+}
 
+.aboutBody {
+  font-family: 'Bitter', serif;
+  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Six Caps', sans-serif; */
+  font-size: 20px;
 }
 .submitPositioning {
   margin-left: 3vw;
@@ -97,8 +103,7 @@ body {
 }
 
 .aboutCard2 {
-  background: url(../src/assets/webb.png);
-  background-size: auto;
+  /* background: url(../src/assets/webb.png); */
   margin-left: 20px;
   box-shadow: 0 10px 25px rgb(0 0 0 / 20%);
   backdrop-filter: blur(2px);
@@ -107,7 +112,7 @@ body {
 
 
 .pattern01{
-  background: url(../src/assets/webb.png);
+  /* background: url(../src/assets/webb.png); */
   box-shadow: 0 10px 25px rgb(0 0 0 / 20%);
   backdrop-filter: blur(2px);
 }
@@ -125,6 +130,19 @@ transform: translate(-20px,-40px) rotate(-10deg) scale(1.2);
     background-position: 0 0 ;
   }
   
+}
+
+/* Detail page styling */
+.backHome {
+  margin-left: 35vw;
+  margin-top: 1px;
+}
+
+.detailImage {
+  position: relative;
+  width: 25%;
+  height: 25%;
+  /* margin-left: 35vw; */
 }
 
 
