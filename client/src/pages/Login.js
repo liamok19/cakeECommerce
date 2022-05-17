@@ -6,15 +6,17 @@ import { LOGIN_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 const styles = {
   headerPositioning: {
-    marginLeft: "12vw",
+    marginLeft: "12.5vw",
     marginBottom: "-14px",
     marginTop: "-60px",
   },
   firstBodyPosition: {
-    // marginLeft: "10vw",
+    marginLeft: "12vw",
     fontSize: "3vw",
-    display: "flex",
-    flexDirection: "column",
+  },
+  bodyPositioning: {
+    marginLeft: "0.2vw",
+    fontSize: "3vw",
   },
   buttonPosition: {
     marginLeft: "160px",
@@ -58,24 +60,24 @@ const Login = (props) => {
 
   return (
     <main style={styles.background} className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
+      <div>
+        <div>
           <h4
             style={styles.headerPositioning}
-            className="card-header bg-dark text-light p-2 fontstyle"
+            className="fontstyle"
           >
             Login
           </h4>
-          <div style={styles.firstBodyPosition} className="card-body fontstyle">
+          <div style={styles.bodyPositioning} className="fontstyle">
             {data ? (
-              <p>
+              <p className="fontstyle">
                 Success! You may now head{" "}
-                <Link to="/">back to the homepage.</Link>
+                <Link className=" fontstyle"  to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form style={styles.buttonPosition} onSubmit={handleFormSubmit}>
+              <form onSubmit={handleFormSubmit}>
                 <input
-                  className="form-input fontstyle loginBtn"
+                  className="form-input fontstyle"
                   placeholder="Your email"
                   name="email"
                   type="email"
@@ -84,16 +86,16 @@ const Login = (props) => {
                   style={styles.firstBodyPosition}
                 />
                 <input
-                  className="form-input fontstyle loginBtn"
+                  className="form-input fontstyle"
                   placeholder="******"
                   name="password"
                   type="password"
                   value={formState.password}
                   onChange={handleChange}
-                  style={styles.firstBodyPosition}
+                  style={styles.bodyPositioning}
                 />
                 <button
-                  className="btn btn-block btn-primary fontstyle loginBtn"
+                  className="btn btn-block btn-primary fontstyle submitPositioning"
                   style={{ cursor: "pointer" }}
                   type="submit"
                 >
