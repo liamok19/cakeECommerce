@@ -161,6 +161,10 @@ transform: translate(-20px,-40px) rotate(-10deg) scale(1.2);
   font-family: 'Poppins', sans-serif;
   font-family: 'Six Caps', sans-serif;
 }
+
+.loginBtn {
+  font-size: 50px ;
+}
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;

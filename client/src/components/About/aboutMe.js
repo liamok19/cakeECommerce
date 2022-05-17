@@ -39,7 +39,7 @@ export default function aboutMe() {
         style={styles.background}
       ></img>
       <h2 className="aboutUs" style={{ position: "absolute" }}>
-        About Us
+        Our Vision
         <p className="aboutBody">
           We make cakes. Buy the cake, buy the collection because you
           are...exactly

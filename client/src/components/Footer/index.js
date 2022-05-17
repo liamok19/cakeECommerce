@@ -30,6 +30,10 @@ export default function Footer() {
         <div style={styles.buffer}></div>
         <div>
           <p>Contact details</p>
+          <p> Email: letthemeeatCake@yumtreats.com </p>
+          <p> Phone: +61 412 345 678 </p>
+          <p>Contact details</p>
+          
         </div>
       </div>
       <div style={styles.coprightStyling}>Copyright @ LetthemEatCake 2022. All rights reserved</div>

@@ -1,27 +1,28 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../utils/mutations";
 
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 const styles = {
   headerPositioning: {
-    marginLeft: "12.5vw",
+    marginLeft: "12vw",
     marginBottom: "-14px",
     marginTop: "-60px",
   },
-  bodyPositioning: {
-    marginLeft: "0.2vw",
-    fontSize: "3vw",
-  },
   firstBodyPosition: {
-    marginLeft: "12vw",
+    // marginLeft: "10vw",
     fontSize: "3vw",
-  }
-}
+    display: "flex",
+    flexDirection: "column",
+  },
+  buttonPosition: {
+    marginLeft: "160px",
+  },
+};
 
 const Login = (props) => {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
   // update state based on form input changes
@@ -50,8 +51,8 @@ const Login = (props) => {
 
     // clear form values
     setFormState({
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     });
   };
 
@@ -59,17 +60,22 @@ const Login = (props) => {
     <main style={styles.background} className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
         <div className="card">
-          <h4 style={styles.headerPositioning} className="card-header bg-dark text-light p-2 fontstyle">Login</h4>
+          <h4
+            style={styles.headerPositioning}
+            className="card-header bg-dark text-light p-2 fontstyle"
+          >
+            Login
+          </h4>
           <div style={styles.firstBodyPosition} className="card-body fontstyle">
             {data ? (
               <p>
-                Success! You may now head{' '}
+                Success! You may now head{" "}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
+              <form style={styles.buttonPosition} onSubmit={handleFormSubmit}>
                 <input
-                  className="form-input fontstyle"
+                  className="form-input fontstyle loginBtn"
                   placeholder="Your email"
                   name="email"
                   type="email"
@@ -78,7 +84,7 @@ const Login = (props) => {
                   style={styles.firstBodyPosition}
                 />
                 <input
-                  className="form-input fontstyle"
+                  className="form-input fontstyle loginBtn"
                   placeholder="******"
                   name="password"
                   type="password"
@@ -87,8 +93,8 @@ const Login = (props) => {
                   style={styles.firstBodyPosition}
                 />
                 <button
-                  className="btn btn-block btn-primary fontstyle"
-                  style={{ cursor: 'pointer' }}
+                  className="btn btn-block btn-primary fontstyle loginBtn"
+                  style={{ cursor: "pointer" }}
                   type="submit"
                 >
                   Submit
