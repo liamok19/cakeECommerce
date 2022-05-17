@@ -28,6 +28,16 @@ body {
   z-index: -1;
 }
 
+/* About Us page */
+.aboutUs{
+  font-family: 'Bitter', serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Six Caps', sans-serif;
+  font-size: 120px;
+  margin-left: 55vw;
+  margin-top: auto;
+
+}
 .submitPositioning {
   margin-left: 3vw;
   font-size: 3vw;
@@ -77,6 +87,8 @@ body {
   flex-direction: row;
   align-items: center;
   margin-bottom: 20px;
+
+
   /* align-content: center; */
 }
 
@@ -85,21 +97,18 @@ body {
 }
 
 .aboutCard2 {
+  background: url(../src/assets/webb.png);
+  background-size: auto;
   margin-left: 20px;
+  box-shadow: 0 10px 25px rgb(0 0 0 / 20%);
+  backdrop-filter: blur(2px);
 
 }
 
 
 .pattern01{
   background: url(../src/assets/webb.png);
-   /* color: (10,100,1); */
-   /* padding: 270px 0; */
-   /* perspective:1000px;
-   perspective-origin: 50% 50%;
-   text-align: center;
-   margin-bottom: 0; */
-   
-   box-shadow: 0 10px 25px rgb(0 0 0 / 20%);
+  box-shadow: 0 10px 25px rgb(0 0 0 / 20%);
   backdrop-filter: blur(2px);
 }
 

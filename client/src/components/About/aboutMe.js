@@ -6,12 +6,11 @@ const styles = {
   background: {
     // backgroundColor: "pink",
     //   position: 'relative',
-    // border: "dotted", 
+    border: "dotted", 
     width: '25vw', 
-    height: '50vh',
+    height: '25vh',
     display: "flex",
     alignContent: "space-evenly",
-    objectFit: 'contain',
   },
   wrapContainer: {
     display: "flex",
@@ -31,13 +30,17 @@ export default function aboutMe() {
         alt="webb"
         className="col-3 pattern01 aboutHover"
         style={styles.background}
-      ></img>
+      >
+      </img>
       <img
         src={webb}
         alt="webb"
         className="col-3 aboutCard2 aboutHover"
         style={styles.background}
       ></img>
+      <p className="aboutUs" style={{position: 'absolute' }}>
+        About Us
+      </p>
     </div>
   );
 }
