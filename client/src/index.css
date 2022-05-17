@@ -73,7 +73,7 @@ body {
   /* background: rgba(192, 215, 255, 0.94); */
   box-shadow: 0 10px 25px rgb(0 0 0 / 20%);
   backdrop-filter: blur(2px);
-  display: flex;
+  /* display: flex; */
   flex-direction: row;
   align-items: center;
   margin-bottom: 20px;

@@ -9,10 +9,10 @@ import { QUERY_CATEGORIES } from "../../utils/queries";
 import { idbPromise } from "../../utils/helpers";
 
 // import * as React from 'react';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 
-function CategoryMenu() {
+function CategoryMenu({ hovered, categoryHoverOn, categoryHoverOut }) {
   const [state, dispatch] = useStoreContext();
 
   const { categories } = state;
@@ -65,21 +65,29 @@ function CategoryMenu() {
   };
   return (
     <Stack>
-    <div style={styles.alignedText}>
-    <h2 className="fontstyle" style={styles.textStyling}>Choose a Category:</h2>
-      {categories.map((item) => (
-        <Button
-        variant="text"
-        style={styles.buttonSpacing}
-          key={item._id}
-          onClick={() => {
-            handleClick(item._id);
-          }}
-        >
-          {item.name}
-        </Button>
-      ))}
-    </div>
+      <div style={styles.alignedText}>
+        <h2 className="fontstyle" style={styles.textStyling}>
+          Choose a Category:
+        </h2>
+        {categories.map((item, i) => (
+          <Button
+            variant="text"
+            style={styles.buttonSpacing}
+            key={item._id}
+            onMouseEnter={() => {
+              categoryHoverOn(i);
+            }}
+            onMouseLeave={() => {
+              categoryHoverOut(i);
+            }}
+            onClick={() => {
+              handleClick(item._id);
+            }}
+          >
+            {item.name}
+          </Button>
+        ))}
+      </div>
     </Stack>
   );
 }

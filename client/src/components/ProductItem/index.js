@@ -12,7 +12,6 @@ const styles = {
   imgSize: {
     width: 100,
     height: 100,
-    marginLeft: "30px",
   },
   cakeHeader: {
     fontSize: "60px",

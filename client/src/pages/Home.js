@@ -1,14 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import ProductList from "../components/ProductList";
 import CategoryMenu from "../components/CategoryMenu";
 import Cart from "../components/Cart";
 import CanvasModel from "../components/Canvas/canvas";
 
 const Home = () => {
+  const [hovered, setHovered] = useState({
+    0: false,
+    1: false,
+    2: false,
+    3: false,
+    4: false,
+  });
+  const categoryHoverOn = (i) => {
+    setHovered((current) => ({
+      ...current,
+      [i]: true,
+    }));
+  };
+
+  const categoryHoverOut = (i) => {
+    setHovered((current) => ({
+      ...current,
+      [i]: false,
+    }));
+  };
+
   return (
     <div className="container">
-      <CategoryMenu />
-      <CanvasModel />
+      <CategoryMenu
+        hovered={hovered}
+        categoryHoverOn={categoryHoverOn}
+        categoryHoverOut={categoryHoverOut}
+      />
+      <CanvasModel
+        hovered={hovered}
+        categoryHoverOn={categoryHoverOn}
+        categoryHoverOut={categoryHoverOut}
+      />
       <ProductList />
       <Cart />
     </div>
@@ -39,7 +68,7 @@ export default Home;
 //     paddingRight: 75,
 //     paddingLeft: 75,
 //     paddingBottom: 270
-//     }, 
+//     },
 // }
 
 // export default function Home() {
@@ -48,7 +77,7 @@ export default Home;
 //         <h1>Cake</h1>
 //         <p style={styles.card1}>
 //           Cakes Galore to choose from
-//         </p> 
+//         </p>
 //         <p style={styles.card2}>Yum Yum for your tum tum</p>
 //             </div>
 //     );

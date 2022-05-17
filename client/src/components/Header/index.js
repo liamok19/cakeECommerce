@@ -5,13 +5,10 @@ import logo from "../../assets/cake_logo.png";
 import Auth from "../../utils/auth";
 
 const styles = {
-  // background: {
-  //   backgroundColor: "pink",
-  // },
+  mainContainer: {
+    zIndex: 10000,
+    },
   textStyling: {
-    // textAlign: "flexstart",
-    // textDecoration: "none",
-    // marginRight: "4px",
     color: "grey",
     transform: "rotate(-90deg)",
     textAlign: "center",
@@ -20,7 +17,6 @@ const styles = {
     opacity: 0.5,
   },
   loginStyling: {
-    // textAlign: "center",
     marginTop:"38px",
     textDecoration: "none",
   },
@@ -56,10 +52,10 @@ const Header = () => {
 
   return (
     <header
-      // style={styles.background}
+      
       className="bg-primary text-light mb-4 py-3 flex-row align-center"
     >
-      <div  className="container flex-row justify-space-between-lg justify-center align-center">
+      <div  style={styles.mainContainer} className="container flex-row justify-space-between-lg justify-center align-center">
         <div style={styles.containerStyling}>
         <h2  
         className="fontstyle"
