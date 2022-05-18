@@ -8,27 +8,24 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-
-
 // Pages import
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
+import Success from "./pages/Success";
 
 //Components import
 // import Model from "./components/Model";
 import Header from "./components/Header/index";
 import Footer from "./components/Footer/index";
-import About from "./components/About/aboutMe"
-
+import About from "./components/About/aboutMe";
 
 //model loader
 import { StoreProvider } from "./utils/GlobalState";
 import Playground from "./pages/Playground";
 
 // The hook returns much more than just the progress so there is a lot you can do there to give the user more information about the loading status of the application.
-
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -76,7 +73,8 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/products/:id" element={<Detail />} />
-                <Route path="/playground" element={<Playground />} />
+                {/* <Route path="/playground" element={<Playground />} /> */}
+                <Route path="/success" element={<Success />} />
               </Routes>
             </div>
 

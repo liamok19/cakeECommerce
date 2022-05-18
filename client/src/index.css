@@ -165,6 +165,20 @@ transform: translate(-20px,-40px) rotate(-10deg) scale(1.2);
 .loginBtn {
   font-size: 50px ;
 }
+
+
+/* success page  */
+.successContainer {
+  display: flex; 
+  flex-direction: row-reverse;
+}
+
+.imgSizeSuccess {
+  width: 30%;
+  height: 50%;
+  margin-left: 35vw;
+}
+
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;

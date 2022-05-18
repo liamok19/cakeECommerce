@@ -41,7 +41,7 @@ export default function aboutMe() {
       <h2 className="aboutUs" style={{ position: "absolute" }}>
         Our Vision
         <p className="aboutBody">
-          We make cakes. Buy the cake, buy the collection because you
+          We make cakes. Buy the cake, buy the collection, because you
           are...exactly
         </p>
       </h2>
