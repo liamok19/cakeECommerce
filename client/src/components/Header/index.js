@@ -26,10 +26,7 @@ const styles = {
     color: "#36454F",
   },
   logoStyling: {
-    marginLeft: "500px",
-    marginTop: "60px", 
-    width: "250px", 
-    height: "250px",
+   
   }, 
   containerStyling: {
     marginBottom: "5vh",
@@ -60,10 +57,9 @@ const Header = () => {
         <h2  
         className="fontstyle"
         style={styles.textStyling}>Let them Eat Cake</h2>
-          <Link style={styles.logoStyling} className="text-light" to="/">
-  
+          <Link to="/">
             <img 
-              style={styles.logoStyling} 
+              className="logoStylingHeader"
               src={logo} 
               alt="logo">
             </img>

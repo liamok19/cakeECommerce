@@ -10,7 +10,9 @@ function Success() {
   return (
     <div>
       <Jumbotron>
-        <h1>
+        <h1
+        className="fontstyleSuccess"
+        >
           Congratulations!
           <img 
             src={cakeLoader}

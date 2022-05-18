@@ -15,6 +15,16 @@ body {
 
 }
 
+/* Header */
+/* Logo SR */
+.logoStylingHeader{
+  margin-left: 70vw;
+  margin-top: 60px; 
+  width: 250px; 
+  height: 250px;
+}
+
+
 /* code {
   /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;} */
@@ -178,7 +188,39 @@ transform: translate(-20px,-40px) rotate(-10deg) scale(1.2);
   height: 50%;
   margin-left: 35vw;
 }
+.fontstyleSuccess {
+  font-family: 'Bitter', serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Six Caps', sans-serif;
+}
 
+
+/* Footer Styling*/
+/* Background  */
+.footerBG {
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+}
+
+.buffer {
+  margin-left: 50vw;
+
+}
+/* Information Outline */
+.coprightStyling {
+  text-align: center;
+
+}
+/* Logo */
+.logoStyling {
+  width: 10vw;
+  height: 20vh;
+  margin-left: 9vw;
+}
+
+
+/* Media Query */
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;
@@ -186,3 +228,37 @@ transform: translate(-20px,-40px) rotate(-10deg) scale(1.2);
 }
 
 
+@media screen and (max-width: 768px){
+  .logoStylingHeader {
+    margin-left: 40vw;
+    margin-top: 20px; 
+    width: 200px; 
+    height: 200px;
+  }
+}
+
+
+/* Media Query Footer */
+@media screen and (max-width: 768px){
+    .footerBG {
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+  }
+
+  .buffer {
+    margin-left: 0vw;
+
+  }
+  /* Information Outline */
+  .coprightStyling {
+    text-align: center;
+
+  }
+  /* Logo */
+  .logoStyling {
+    width: 25vw;
+    height: 10vh;
+    margin-left: 9vw;
+  }
+}
