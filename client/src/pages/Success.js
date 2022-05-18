@@ -5,7 +5,7 @@ import cakeLoader from "../assets/cake_loader.gif";
 function Success() {
   setTimeout(() => {
     window.location.assign('/');
-  }, 3000);
+  }, 6000);
 
   return (
     <div>

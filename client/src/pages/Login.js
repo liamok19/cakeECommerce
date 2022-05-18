@@ -4,24 +4,6 @@ import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 
 import Auth from "../utils/auth";
-const styles = {
-  headerPositioning: {
-    marginLeft: "12.5vw",
-    marginBottom: "-14px",
-    marginTop: "-60px",
-  },
-  firstBodyPosition: {
-    marginLeft: "12vw",
-    fontSize: "3vw",
-  },
-  bodyPositioning: {
-    marginLeft: "0.2vw",
-    fontSize: "3vw",
-  },
-  buttonPosition: {
-    marginLeft: "160px",
-  },
-};
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -59,16 +41,15 @@ const Login = (props) => {
   };
 
   return (
-    <main style={styles.background} className="flex-row justify-center mb-4">
+    <main className="flex-row justify-center mb-4">
       <div>
         <div>
           <h4
-            style={styles.headerPositioning}
-            className="fontstyle"
+            className="fontstyle headerPositioning"
           >
             Login
           </h4>
-          <div style={styles.bodyPositioning} className="fontstyle">
+          <div className="fontstyle bodyPositioning">
             {data ? (
               <p className="fontstyle">
                 Success! You may now head{" "}
@@ -77,22 +58,20 @@ const Login = (props) => {
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <input
-                  className="form-input fontstyle"
+                  className="form-input fontstyle firstBodyPosition"
                   placeholder="Your email"
                   name="email"
                   type="email"
                   value={formState.email}
                   onChange={handleChange}
-                  style={styles.firstBodyPosition}
                 />
                 <input
-                  className="form-input fontstyle"
+                  className="form-input fontstyle bodyPositioning"
                   placeholder="******"
                   name="password"
                   type="password"
                   value={formState.password}
                   onChange={handleChange}
-                  style={styles.bodyPositioning}
                 />
                 <button
                   className="btn btn-block btn-primary fontstyle submitPositioning"

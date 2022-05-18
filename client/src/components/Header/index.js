@@ -61,10 +61,10 @@ const Header = () => {
           <div style={styles.loginStyling}>
           {Auth.loggedIn() ? (
             <>
-              <Link style={styles.logoutStyling} className="btn btn-lg btn-info m-2 fontstyle" to="/me">
+              <Link style={styles.btnStyling} className="btn btn-lg btn-info m-2 fontstyle" to="/me">
                 {Auth.getUser().data.username}'s profile
               </Link>
-              <button style={styles.logoutStyling} className="btn btn-lg btn-light m-2 fontstyle" onClick={logout}>
+              <button style={styles.btnStyling} className="btn btn-lg btn-light m-2 fontstyle" onClick={logout}>
                 Logout
               </button>
             </>

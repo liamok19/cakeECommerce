@@ -6,22 +6,6 @@ import { ADD_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
-const styles = {
-  headerPositioning: {
-    marginLeft: "12.5vw",
-    marginBottom: "-14px",
-    marginTop: "-60px",
-  },
-  bodyPositioning: {
-    marginLeft: "0.2vw",
-    fontSize: "3vw",
-  },
-  firstBodyPosition: {
-    marginLeft: "12vw",
-    fontSize: "3vw",
-  }
-}
-
 const Signup = () => {
   const [formState, setFormState] = useState({
     username: '',
@@ -55,11 +39,11 @@ const Signup = () => {
   };
 
   return (
-    <main style={styles.background} className="flex-row justify-center mb-4">
+    <main className="flex-row justify-center mb-4">
       <div>
         <div>
-          <h4 style={styles.headerPositioning} className=" fontstyle">Sign Up</h4>
-          <div style={styles.bodyPositioning}>
+          <h4 className=" fontstyle headerPositioning">Sign Up</h4>
+          <div className='bodyPositioning'>
             {data ? (
               <p className=" fontstyle">
                 Success! You may now head{' '}
@@ -68,31 +52,30 @@ const Signup = () => {
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <input
-                  className="form-input fontstyle"
+                  className="form-input fontstyle firstBodyPosition"
                   placeholder="Your username"
                   name="username"
                   type="text"
                   value={formState.name}
                   onChange={handleChange}
-                  style={styles.firstBodyPosition}
                 />
                 <input
-                  className="form-input fontstyle"
+                  className="form-input fontstyle bodyPositioning"
                   placeholder="Your email"
                   name="email"
                   type="email"
                   value={formState.email}
                   onChange={handleChange}
-                  style={styles.bodyPositioning}
+                  
                 />
                 <input
-                  className="form-input fontstyle"
+                  className="form-input fontstyle bodyPositioning"
                   placeholder="******"
                   name="password"
                   type="password"
                   value={formState.password}
                   onChange={handleChange}
-                  style={styles.bodyPositioning}
+                 
                 />
                 <button
                   className="btn btn-block btn-primary fontstyle submitPositioning"
