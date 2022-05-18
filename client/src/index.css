@@ -213,6 +213,12 @@ transform: translate(-20px,-40px) rotate(-10deg) scale(1.2);
   font-family: 'Six Caps', sans-serif;
 }
 
+/* Catgeory Menu  */
+.buttonSpacing{
+  margin-left: 50px;
+  z-index: 1000000;
+  word-wrap: break-word;
+}
 
 /* Footer Styling*/
 /* Background  */
@@ -287,8 +293,16 @@ transform: translate(-20px,-40px) rotate(-10deg) scale(1.2);
   }
 }
 
-/* textBrand Screen Left */
-
+/* Category Menu */
+/* @media screen and (max-width: 768px){
+  .buttonSpacing{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10;
+    z-index: 1000000;
+    word-wrap: break-word;
+  }
+} */
 
 /* Media Query Footer */
 @media screen and (max-width: 768px){

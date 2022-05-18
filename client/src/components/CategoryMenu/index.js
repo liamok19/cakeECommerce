@@ -51,11 +51,7 @@ function CategoryMenu({ hovered, categoryHoverOn, categoryHoverOut }) {
     alignedText: {
       textAlign: "center",
     },
-    buttonSpacing: {
-      marginLeft: 40,
-      zIndex: 1000000,
-      wordWrap: "break-word",
-    },
+  
     textStyling: {
       textAlign: "start",
       marginLeft: "10px",
@@ -72,7 +68,7 @@ function CategoryMenu({ hovered, categoryHoverOn, categoryHoverOut }) {
         {categories.map((item, i) => (
           <Button
             variant="text"
-            style={styles.buttonSpacing}
+            className="buttonSpacing"
             key={item._id}
             onMouseEnter={() => {
               categoryHoverOn(i);
