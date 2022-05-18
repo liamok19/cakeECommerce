@@ -7,6 +7,7 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import Marquee from "react-fast-marquee";
 
 // Pages import
 import Signup from "./pages/Signup";
@@ -20,6 +21,7 @@ import Success from "./pages/Success";
 import Header from "./components/Header/index";
 import Footer from "./components/Footer/index";
 import About from "./components/About/aboutMe";
+import MarqueeC from "./components/Marquee/marquee";
 
 //model loader
 import { StoreProvider } from "./utils/GlobalState";
@@ -66,10 +68,12 @@ function App() {
           <div className="flex-column justify-flex-start min-100-vh">
             <Header style={styles.categoryPosition} />
             <About />
+            <Marquee>
+              <MarqueeC />
+            </Marquee>
             <div className="container">
               <Routes>
                 <Route path="/" element={<Home />} />
-
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/products/:id" element={<Detail />} />

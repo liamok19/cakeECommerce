@@ -43,6 +43,20 @@ body {
   font-size: 100px;
 }
 
+/* Marquee Styling  */
+.marqueeStyle {
+  display: flex;
+  flex-direction: row;
+
+  background: linear-gradient(90deg, rgba(0, 174, 255, 0.205) 30%, rgba(246, 243, 239, 0.787) 70%, rgba(251, 171, 255, 0.297) 90%, rgba(0, 174, 255, 0.205) 100%);
+}
+
+.marqueeWordspacing {
+  margin-right: 95px;
+  font-family: 'Bitter', serif;
+  font-family: 'Poppins', sans-serif;
+}
+
 /* code {
   /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;} */
