@@ -88,10 +88,26 @@ body {
   backdrop-filter: blur(105px);  */
 }
 
+/* cart window */
 .cart{
   background: url(../src/assets/webb.png);
   animation: animate 2s linear infinite;
 }
+
+.close{
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  cursor: pointer;
+  color: var(--tertiary);
+}
+.cartfontstyle{
+  font-family: 'Bitter', serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Six Caps', sans-serif;
+  font-size: 45px;
+}
+
 
 .px-1 {
   padding-right: var(--cakeoption-one);
@@ -294,6 +310,28 @@ transform: translate(-20px,-40px) rotate(-10deg) scale(1.2);
   }
 }
 
+/* Cart Media Query */
+@media screen and (max-width: 768px){
+  .cart-closed {
+    position: relative;
+    margin: 0 auto;
+  }
+  .close {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    cursor: pointer;
+    color: var(--tertiary);
+  }
+  .cartfontstyle{
+    font-family: 'Bitter', serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Six Caps', sans-serif;
+    font-size: 25px;
+    margin-right: 10px;
+  }
+  
+}
 /* Category Menu */
 /* @media screen and (max-width: 768px){
   .buttonSpacing{

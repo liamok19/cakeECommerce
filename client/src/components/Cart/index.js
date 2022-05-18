@@ -78,10 +78,6 @@ const Cart = () => {
       <div className="cart-closed" onClick={toggleCart}>
         <span role="img" aria-label="trash">
            🛒
-           {/* <img 
-           src={imgCart} 
-           alt="imgCart">
-           </img> */}
         </span>
       </div>
     );
@@ -89,7 +85,7 @@ const Cart = () => {
 
   return (
     <div  className="cart">
-      <div className="close fontstyle" onClick={toggleCart}>
+      <div className="close cartfontstyle" onClick={toggleCart}>
         [close]
       </div>
       <h2 style={styles.headerCheckoutStyling} className="fontstyle" >[Shopping Cart]</h2>
