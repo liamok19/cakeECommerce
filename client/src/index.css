@@ -15,6 +15,14 @@ body {
 
 }
 
+.fontstyle{
+  font-family: 'Bitter', serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Six Caps', sans-serif;
+  font-size: 6vw;
+  z-index: -1;
+}
+
 /* Header */
 /* Logo SR */
 .logoStylingHeader{
@@ -24,19 +32,22 @@ body {
   height: 250px;
 }
 
+/* Main Container */
+.textStamp {
+  color: grey;
+  transform: rotate(-90deg);
+  text-align: center;
+  margin-top: 110px;
+  position: fixed;
+  opacity: 0.5;
+  font-size: 100px;
+}
 
 /* code {
   /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;} */
  
 
-.fontstyle{
-  font-family: 'Bitter', serif;
-  font-family: 'Poppins', sans-serif;
-  font-family: 'Six Caps', sans-serif;
-  font-size: 6vw;
-  z-index: -1;
-}
 
 /* About Us page */
 .aboutUs{
@@ -54,10 +65,18 @@ body {
   /* font-family: 'Six Caps', sans-serif; */
   font-size: 20px;
 }
+.bufferColumn {
+  margin-left: 40vw;
+}
+
+
 .submitPositioning {
   margin-left: 3vw;
   font-size: 3vw;
 }
+
+
+
 
 .flexrow_cake {
   display: flex;
@@ -227,7 +246,8 @@ transform: translate(-20px,-40px) rotate(-10deg) scale(1.2);
   }
 }
 
-
+/* Header */
+/* logo Styling */
 @media screen and (max-width: 768px){
   .logoStylingHeader {
     margin-left: 40vw;
@@ -235,7 +255,39 @@ transform: translate(-20px,-40px) rotate(-10deg) scale(1.2);
     width: 200px; 
     height: 200px;
   }
+
+  .textStamp {
+    color: grey;
+    transform: rotate(-90deg);
+    text-align: center;
+    margin-top: 110px;
+    position: fixed;
+    opacity: 0.5;
+    font-size: 50px;
+  }
+
+  .bufferColumn {
+    margin-left: 30vw;
+  }
+
+  .aboutUs{
+    font-family: 'Bitter', serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Six Caps', sans-serif;
+    font-size: 50px;
+    margin-left: 25vw;
+    margin-top: auto;
+  }
+
+  .aboutBody {
+    font-family: 'Bitter', serif;
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Six Caps', sans-serif; */
+    font-size: 15px;
+  }
 }
+
+/* textBrand Screen Left */
 
 
 /* Media Query Footer */

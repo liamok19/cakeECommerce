@@ -8,14 +8,6 @@ const styles = {
   mainContainer: {
     zIndex: 10000,
     },
-  textStyling: {
-    color: "grey",
-    transform: "rotate(-90deg)",
-    textAlign: "center",
-    marginTop: "110px",
-    position: "fixed",
-    opacity: 0.5,
-  },
   loginStyling: {
     marginTop:"38px",
     textDecoration: "none",
@@ -52,11 +44,13 @@ const Header = () => {
       
       className="bg-primary text-light mb-4 py-3 flex-row align-center"
     >
-      <div  style={styles.mainContainer} className="container flex-row justify-space-between-lg justify-center align-center">
+      <div  
+      style={styles.mainContainer} 
+      className="container flex-row justify-space-between-lg justify-center align-center">
         <div style={styles.containerStyling}>
         <h2  
-        className="fontstyle"
-        style={styles.textStyling}>Let them Eat Cake</h2>
+        className="fontstyle textStamp"
+        >Let them Eat Cake</h2>
           <Link to="/">
             <img 
               className="logoStylingHeader"

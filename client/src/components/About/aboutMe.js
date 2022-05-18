@@ -17,15 +17,13 @@ const styles = {
     display: "flex",
     flexDirection: "space-evenly",
   },
-  bufferColumn: {
-    marginLeft: "40vw",
-  },
+
 };
 
 export default function aboutMe() {
   return (
     <div className="container wrapper" style={styles.wrapContainer}>
-      <div className="col-6" style={styles.bufferColumn}></div>
+      <div className="col-6 bufferColumn" ></div>
       <img
         src={webb}
         alt="webb"
