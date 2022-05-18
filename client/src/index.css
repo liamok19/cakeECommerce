@@ -175,6 +175,7 @@ transform: translate(-20px,-40px) rotate(-10deg) scale(1.2);
 }
 
 
+/* Product Page */
 /* //product Items Styling:  */
 .priceCurrency{
   align-items: flex-end;
@@ -313,7 +314,7 @@ transform: translate(-20px,-40px) rotate(-10deg) scale(1.2);
   }
 
   .buffer {
-    margin-left: 0vw;
+    margin-left: 5vw;
 
   }
   /* Information Outline */
@@ -326,5 +327,20 @@ transform: translate(-20px,-40px) rotate(-10deg) scale(1.2);
     width: 25vw;
     height: 10vh;
     margin-left: 9vw;
+  }
+}
+
+/* Media Query Details page */
+@media screen and (max-width: 768px){
+  .backHome {
+    margin-left: 15vw;
+    margin-top: 0px;
+  }
+
+  .detailImage {
+    position: relative;
+    width: 50%;
+    height: 50%;
+    /* margin-left: 35vw; */
   }
 }
