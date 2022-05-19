@@ -25,7 +25,7 @@ import MarqueeC from "./components/Marquee/marquee";
 
 //model loader
 import { StoreProvider } from "./utils/GlobalState";
-import Playground from "./pages/Playground";
+// import Playground from "./pages/Playground";
 
 // The hook returns much more than just the progress so there is a lot you can do there to give the user more information about the loading status of the application.
 
