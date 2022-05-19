@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/apm/l/vim-mode?color=orange&style=for-the-badge.svg)](https://opensource.org/licenses/MIT)
 
 
-![alt text](./public/images/Page_title.png) <br><br>
+![Logo](./client/public/images/cake_logo_border.png) <br><br>
 
 - Link: https://letthemeatcake.herokuapp.com/
 - Repo: https://github.com/liamok19/cakeECommerce
@@ -18,6 +18,7 @@
 - [Description](#description)
 - [License](#license)
 - [UserStory](#userstory)
+- [Technology](#technology)
 - [Concept](#concept)
 - [Renders](#renders)
 - [Usage](#usage)
@@ -54,6 +55,17 @@ The payment will go through with a redirection to a success page and back to the
 		
 <br><br>
 
+## Technology
+- MongoDb
+- Express.js
+- React.js
+- Node.js
+- Three.js
+- Material UI
+- Heroku
+
+<br><br>
+
 ## Concept
 ![conept 01](./client/public/images/conept/page_01.jpg) <br><br>
 ![conept 02](./client/public/images/conept/page_02.jpg) <br><br>
@@ -74,17 +86,7 @@ The payment will go through with a redirection to a success page and back to the
 ## Credits
 | Name | Link | 
 | ------------- |:-------------:| 
-| NPM - MDB | https://mdbootstrap.com/docs/standard/extended/to-do-list/  |
-| freepik | https://www.freepik.com/free-vector/set-kids-helping-parents-with-home-cleaning_17962450.htm#query=kids%20chores&position=28&from_view=keyword | 
 
-
-
-
-|||
-| Build folder structure for client and server folders | Completed |
-| Login page setup | Completed |
-
-|||
 
 Resources:
 react three model setup
@@ -102,10 +104,5 @@ https://mui.com/material-ui/react-button/#main-content
 
 Test Card Methos: 
 https://stripe.com/docs/testing#cards
-
-//several items in cart should add ontop of eachother
-
-For later atas 
-mongodb+srv://lokipoki:<password>@cluster0.hdhya.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
 
