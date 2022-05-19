@@ -31,7 +31,10 @@ import Playground from "./pages/Playground";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
-  uri: "http://localhost:3001/graphql",
+  uri:
+    window.location.hostname.indexOf("localhost") > -1
+      ? "http://localhost:3001/graphql"
+      : "/graphql",
 });
 
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
